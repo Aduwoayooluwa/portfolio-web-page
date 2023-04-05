@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Hero from '@/container/Hero'
 import Projects from '@/container/Projects'
+import Stacks from '@/container/Stacks'
+import ScrollContainer from '@/components/others/ScrollContainer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,9 +20,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Hero />
-        <Projects />
-        {/* <Hero /> */}
+        <>
+            <Hero />
+          <Projects />
+          {/* <Hero /> */}
+          <Stacks />
+          
+        </>
+        
       </main>
     </>
   )

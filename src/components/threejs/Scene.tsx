@@ -12,7 +12,7 @@ export default function App() {
         <ambientLight />
         <directionalLight castShadow intensity={0.6} position={[0, 0, 10]} />
         <Scene scale={0.01} />
-        {/* <OrbitControls makeDefault /> */}
+        <OrbitControls makeDefault />
         <Environment resolution={256}>
             <group rotation={[-Math.PI / 2, 0, 0]}>
             <Lightformer intensity={4} rotation-x={Math.PI / 2} position={[0, 5, -9]} scale={[10, 10, 1]} />
