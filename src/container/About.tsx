@@ -6,7 +6,7 @@ const About = (props: Props) => {
     return (
         <div className='bg-[#191825] grid place-items-center p-10 h-[700px] w-full text-white'>
             
-            <summary className='w-2/3'>
+            <summary className=' w-2/3 deep-shadow rounded-lg'>
             <p className='text-center font-semibold text-2xl mb-3'>About Me</p>
                 <p className='mb-3'>
                 I am an experienced web developer with a passion for creating innovative and dynamic applications. 

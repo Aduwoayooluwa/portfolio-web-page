@@ -8,6 +8,7 @@ import Stacks from '@/container/Stacks'
 import ScrollContainer from '@/components/others/ScrollContainer'
 import About from '@/container/About'
 import Footer from '@/Layout/Footer'
+import Test from '@/container/Test'
 
 
 const inter = Inter({ subsets: ['latin'] })
