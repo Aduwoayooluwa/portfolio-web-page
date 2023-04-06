@@ -75,7 +75,7 @@ const Particles = (props: Props) => {
                         type: "circle"
                         },
                         size: {
-                        anim: { enable: false, size_min: 0.3, speed: 4, sync: false },
+                        anim: { enable: true, size_min: 0.3, speed: 4, sync: false },
                         random: false,
                         value: 1
                         }

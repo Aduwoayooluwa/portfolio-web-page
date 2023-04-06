@@ -19,7 +19,7 @@ type Props = {}
 
 const Stacks = (props: Props) => {
     return (
-        <div className='py-10 px-5 bg-[#2D2727] justify-center'>
+        <div className='py-10 px-5 z-10 bg-[#2D2727] justify-center'>
             <Swiper
       // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

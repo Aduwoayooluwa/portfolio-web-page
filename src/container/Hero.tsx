@@ -32,7 +32,10 @@ const Hero = (props: Props) => {
 
     return (
         <>
+        <div className='-z-10'>
             <Particles />
+        </div>
+            
             <animated.div style={{ background }} className={styles.background} />
             <main className='bg-[#2C3333] h-screen w-full flex flex-col items-center justify-center'>
                 <div className='w-1/4 absolute top-20 right-20'>
