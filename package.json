@@ -13,6 +13,7 @@
     "@react-spring/web": "^9.7.1",
     "@react-three/drei": "^9.62.2",
     "@react-three/fiber": "^8.12.0",
+    "@react-three/postprocessing": "^2.7.1",
     "@splinetool/loader": "^0.9.282",
     "@splinetool/r3f-spline": "^1.0.2",
     "@types/node": "18.15.11",
@@ -23,11 +24,17 @@
     "eslint-config-next": "13.2.4",
     "leva": "^0.9.34",
     "next": "13.2.4",
+    "postprocessing": "^6.30.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-particles": "^2.9.3",
     "swiper": "^9.2.0",
     "three": "^0.151.3",
-    "typescript": "5.0.3"
+    "three-stdlib": "^2.21.8",
+    "tsparticles": "^2.9.3",
+    "tsparticles-engine": "^2.9.3",
+    "typescript": "5.0.3",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

@@ -1,6 +1,6 @@
 import React from 'react'
 // Import Swiper React components
-import SwiperCore, { Navigation, Pagination, Keyboard, Mousewheel, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Keyboard, Mousewheel, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 
@@ -9,35 +9,42 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import "swiper/css/autoplay";
 
-SwiperCore.use([Keyboard, Mousewheel]);
+import { stacks } from '@/utils/stacks';
+import Image from 'next/image';
+
+SwiperCore.use([Keyboard, Mousewheel, Autoplay]);
 type Props = {}
 
 const Stacks = (props: Props) => {
     return (
-        <div>
+        <div className='py-10 px-5 bg-[#2D2727] justify-center'>
             <Swiper
       // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+        spaceBetween={10}
         slidesPerView={3}
-        navigation
         mousewheel
         keyboard={{enabled: true}}
         direction='horizontal'
+        autoplay={{delay: 2000,
+            disableOnInteraction: false,}}
+            centeredSlides={true}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
 
         >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        ...
+            {
+                stacks.map((images, index) => {
+                    return (
+                        <SwiperSlide key={index}>
+                            <Image className='bg-white' src={images.img} alt={'images'} width={200} height={160}/>
+                        </SwiperSlide>
+                    )
+                })
+            }
+    
     </Swiper>
         </div>
     )

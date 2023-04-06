@@ -1,4 +1,4 @@
-const stacks = [
+export const stacks = [
     {
         img: '/assets/ts.png'
     },

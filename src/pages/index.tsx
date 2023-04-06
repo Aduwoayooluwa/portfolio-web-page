@@ -6,6 +6,8 @@ import Hero from '@/container/Hero'
 import Projects from '@/container/Projects'
 import Stacks from '@/container/Stacks'
 import ScrollContainer from '@/components/others/ScrollContainer'
+import About from '@/container/About'
+import Footer from '@/Layout/Footer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,10 +27,14 @@ export default function Home() {
           <Projects />
           {/* <Hero /> */}
           <Stacks />
+          <About />
           
         </>
         
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   )
 }
