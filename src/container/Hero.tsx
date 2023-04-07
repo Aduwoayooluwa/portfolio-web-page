@@ -4,14 +4,22 @@ import  { TextP } from '@/components/threejs/Button'
 import App from '@/components/threejs/Scene'
 import SpApp from '@/components/threejs/Sphere'
 import Button from '@/components/threejs/Spring'
-import React from 'react'
-import Test from './Test'
+import React, { Suspense } from 'react'
 import { useSpring, animated, config } from '@react-spring/web'
 import styles from './styles.module.css'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import Chair from '@/components/threejs/Chair'
+
 
 type Props = {}
 
 const Hero = (props: Props) => {
+    const date = new Date()
+    const get_current_time = date.toUTCString()
+    console.log(get_current_time)
+    const Hobject = React.lazy(() => import('@/components/threejs/Hobjects'))
+    const Moon = React.lazy(() => import('@/components/threejs/Moon'))
     const [{ background }] = useSpring(
             () => ({
             from: { background: '#181823' },
@@ -34,46 +42,99 @@ const Hero = (props: Props) => {
         <>
         <div className='-z-10'>
             <Particles />
-        </div>
-            
+        </div>            
             <animated.div style={{ background }} className={styles.background} />
             <main className='bg-[#2C3333] h-screen w-full flex flex-col items-center justify-center'>
-                <div className='w-1/4 absolute top-20 right-20'>
-                    <App />
+                <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>
+                    <Suspense fallback={(<p>Error Loading</p>)}>
+                    <Canvas>
+                        <Hobject img={'github.png'}/>
+                        <OrbitControls />
+                    </Canvas>
+
+                </Suspense>
+                </section>
+
+                <section className='absolute right-[10px] top-[45rem] md:top-[40rem]'>
+                    <Suspense fallback={(<p>Error Loading</p>)}>
+                    <Canvas>
+                        <Hobject img={'hashnode.png'}/>
+                        <OrbitControls />
+                    </Canvas>
+
+                </Suspense>
+                </section>
+                <section className='absolute z-30 left-10 top-[40rem]'>
+                    <Suspense fallback={(<p>Error Loading</p>)}>
+                    <Canvas>
+                        <Hobject img={'linkedin.png'}/>
+                        <OrbitControls />
+                    </Canvas>
+
+                </Suspense>
+                </section>
+
+                <div className='w-1/4 absolute top-[3rem] md:top-[2rem] right-20'>
+                    <Suspense fallback={(<p>Error Loading</p>)}>
+                        <Canvas>
+                            <Moon />
+                            <OrbitControls autoRotate autoRotateSpeed={4} />
+                        </Canvas>
+
+                    </Suspense>
                 </div>
+
                 
-                <div className='w-1/3 absolute top-28 left-20'>
+                
+                <div className='w-1/3 absolute md:top-10 top-[2rem] left-20'>
                     <BoxApp />
                 </div>
 
-                <section>
-                    <div className='overflow-hidden rounded-full w-[400px] h-[400px]'>
-                        <SpApp />
+                <p className=' w-full text-xs font-extrabold text-center md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {get_current_time}</p>
+
+                <section className=' flex justify-between md:flex-row flex-col p-10 mt-10 md:mt-20 backdrop-blur-2xl bg-white/20 text-white z-20  w-4/5 md:h-[400px] h-fit' >
+                    <div className='w-full h-fit'>
+                        
+                        <p className="font-medium md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
+                        <p className='font-bold text-[2.2rem]'>I am Aduwo Ayooluwa</p>
+                        <summary className='list-none w-full md:w-1/2 my-3'>A Human Spider with 3+ years of experience in creating web for businesses and enterprises</summary>
                     </div>
-
-
-                </section>
-
-                <section className='text-white'>
-                    <p className=''>I am Ayooluwa Aduwo</p>
-                    <summary>I am a Full Stack Web Developer</summary>
-                </section>
+                   
                 
-                
-                <section className='w-full'>
-                    <div className='w-full'>
+                    <section className='w-full '>
+                    {/* <div className='w-full'>
                     <TextP name='Coding Pastor' />
+                    </div> */}
+                    <div className='w-full hidden md:flex z-20  h-full '>
+                        <Suspense fallback={(<div>Error</div>)}>
+                            <Canvas>
+                                <Chair />
+                                <OrbitControls />
+                            </Canvas>
+                            
+                        </Suspense>
                     </div>
 
-                    <div className='absolute left-20'>
-                        <Button name="View My Resume" />
+                    <div className='md:absolute left-10 my-3'>
+                        <Button color='#2F58CD' name="View My Resume" />
                     </div>
 
-                    <div className='absolute right-20'>
-                        <Button name="Contact Me" />
+                    <div className='md:absolute right-10 mt-3 mb-10'>
+                        <Button color='#128C7E' name="Contact me via WhatsApp" />
                     </div>
                     
                 </section>
+                </section>         
+
+                
+
+                {/* <section className='text-white'>
+                    <p className=''>I am Ayooluwa Aduwo</p>
+                    <summary>I am a Full Stack Web Developer</summary>
+                </section> */}
+                
+                
+                
             </main>
         </>
     )

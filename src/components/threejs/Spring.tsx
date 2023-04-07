@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 type Props = {
     name: string
+    color: string
 }
 
 const Button = (props: Props) => {
@@ -16,7 +17,7 @@ const Button = (props: Props) => {
         <div onClick={() => {
             setBtnClick(!btnClick)
         }}>
-            <animated.button className={'text-white cursor-pointer bg-blue-500 rounded-lg w-[200px] shadow px-2 py-4 text-center'} 
+            <animated.button className={`text-white text-sm  cursor-pointer bg-[${props.color}] rounded-lg w-[250px] shadow px-2 py-4 text-center`} 
             style={{
                 opacity: x.to({ range: [0, 1], output: [0.3, 1] }),
                 scale: x.to({

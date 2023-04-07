@@ -26,7 +26,7 @@ export const projects = [
     {
         title: 'HealthBanc',
         desc: `Joined the team, and added the wallet functionality to the Project`,
-        stacks: ['React.js', 'Redux, react-query'],
+        stacks: ['React.js', 'Redux', 'JavaScript'],
         code: '',
         demo: 'https://healthbanc.ng',
         img: '/projects/healthbanc.png'

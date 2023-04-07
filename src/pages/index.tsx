@@ -9,7 +9,8 @@ import ScrollContainer from '@/components/others/ScrollContainer'
 import About from '@/container/About'
 import Footer from '@/Layout/Footer'
 import Test from '@/container/Test'
-
+import Container from '@/container/Container'
+import { Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,6 +30,7 @@ export default function Home() {
           {/* <Hero /> */}
           <Stacks />
           <About />
+          <Container />
           
         </>
         
