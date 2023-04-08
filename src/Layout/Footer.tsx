@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { SiHashnode, SiGithub, SiLinkedin, SiMicrodotblog } from 'react-icons/si'
 type Props = {}
 
 const Footer = (props: Props) => {
@@ -11,9 +11,10 @@ const Footer = (props: Props) => {
 
             <section className='flex items-center py-3 justify-around'>
                 <div className='leading-8 items-start flex flex-col'>
-                    <p>Hashnode</p>
-                    <p>Github</p>
-                    <p>LinkedIn</p>
+                    <p className='flex items-center'><span className="text-blue-700"><SiHashnode /></span><a className="ml-3" href='https://hashnode.com/@codingpastor'>Hashnode</a></p>
+                    <p className='flex items-center'><span><SiGithub /></span><a className="ml-3" href='https://github/AduwoAyooluwa'>Github</a></p>
+                    <p className='flex items-center'><span className='text-blue-500'><SiLinkedin /></span><a className="ml-3" href='https://linkedin.com/in/aduwo-ayooluwa'>LinkedIn</a></p>
+                    <p className='flex items-center'><span className='text-yellow-500'><SiMicrodotblog /></span><a className="ml-3" href='https://codingpastor.dev'>My Blog</a></p>
                 </div>
 
                 <div>
