@@ -30,6 +30,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-particles": "^2.9.3",
+    "react-use": "^17.4.0",
     "swiper": "^9.2.0",
     "three": "^0.151.3",
     "three-stdlib": "^2.21.8",

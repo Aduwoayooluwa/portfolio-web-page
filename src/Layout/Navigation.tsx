@@ -28,12 +28,12 @@ const Navigation = (props: Props) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const { handleScroll, navColor, setNavColor, scrollHeight } = React.useContext(ScrollContext)
-
+    console.log(scrollHeight)   
     
 
 
         return (
-        <aside id="navbar" onScroll={handleScroll} className={`${scrollHeight > 10 && 'bg-black'} ${scrollHeight > 1500 && scrollHeight < 2300 && 'bg-red-800'} ${scrollHeight > 3000 && 'bg-indigo-800'} ${scrollHeight > 2300 && scrollHeight < 3000 && 'bg-blue-800'} ${scrollHeight > 600 && scrollHeight < 1500  && 'bg-red-600'} ${isOpen ? 'h-screen bg-black' : 'bg-transparent'} fixed z-50 w-full grid place-items-center py-4 text-white`}>
+        <aside id="navbar" onScroll={handleScroll} className={`${scrollHeight > 10 && 'bg-black'} ${scrollHeight > 300 && scrollHeight < 1000 && 'bg-red-600'} ${scrollHeight > 1000 && scrollHeight < 2000 && 'bg-red-900'} ${scrollHeight > 2000 && scrollHeight < 3000 && 'bg-indigo-700'}  fixed z-50 w-full grid place-items-center py-4 text-white`}>
             <nav  className='md:flex items-center hidden justify-between w-3/5'>
                 {
                     navItems.map((item, index) => {

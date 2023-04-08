@@ -11,6 +11,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Chair from '@/components/threejs/Chair'
 import { Html, useProgress } from '@react-three/drei'
+import { DragControls } from 'three-stdlib'
 
 
 type Props = {}
@@ -113,12 +114,7 @@ const Hero = (props: Props) => {
                         </div>
                         
                     </div>
-                
-                    <section className='w-full '>
-                    {/* <div className='w-full'>
-                    <TextP name='Coding Pastor' />
-                    </div> */}
-                    <div className='w-full hidden md:flex z-20  h-full '>
+                    <div className='z-20 w-full bg-red-400 flex md:hidden mt-10 h-full '>
                         <Suspense fallback={(<div>Error</div>)}>
                             <Canvas>
                                 <Chair />
@@ -127,16 +123,27 @@ const Hero = (props: Props) => {
                             
                         </Suspense>
                     </div>
-
-                    <div className='md:absolute left-10 my-3'>
-                        <Button color='#2F58CD' name="View My Resume" />
+                
+                    <div className='w-full  '>
+                    {/* <div className='w-full'>
+                    <TextP name='Coding Pastor' />
+                    </div> */}
+                    <div className='hidden md:flex z-20 mt-10 md:mt-0 h-full '>
+                        <Suspense fallback={(<div>Error</div>)}>
+                            <Canvas>
+                                <Chair />
+                                <OrbitControls />
+                                
+                            </Canvas>
+                            
+                        </Suspense>
                     </div>
 
-                    <div className='md:absolute right-10 mt-3 mb-10'>
-                        <Button color='#128C7E' name="Contact me via WhatsApp" />
+                    <div className='md:absolute left-10  my-6 md:my-3'>
+                        <Button color='' name="View My Resume" />
                     </div>
                     
-                </section>
+                </div>
                 </section>         
 
                 

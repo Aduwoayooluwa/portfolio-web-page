@@ -17,7 +17,7 @@ const Button = (props: Props) => {
         <div onClick={() => {
             setBtnClick(!btnClick)
         }}>
-            <animated.button className={`text-white text-sm  cursor-pointer bg-[${props.color}] rounded-lg w-[250px] shadow px-2 py-4 text-center`} 
+            <animated.button className={`text-white text-sm  cursor-pointer bg-[#2F58CD] rounded-lg w-[250px] shadow px-2 py-4 text-center`} 
             style={{
                 opacity: x.to({ range: [0, 1], output: [0.3, 1] }),
                 scale: x.to({
