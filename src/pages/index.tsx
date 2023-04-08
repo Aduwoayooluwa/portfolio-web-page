@@ -10,11 +10,13 @@ import About from '@/container/About'
 import Footer from '@/Layout/Footer'
 import Test from '@/container/Test'
 import Container from '@/container/Container'
-import { Suspense } from 'react'
+import { Suspense, UIEvent, useEffect, useState } from 'react'
+import Work from '@/container/Work'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  
   return (
     <>
       <Head>
@@ -29,6 +31,7 @@ export default function Home() {
           <Projects />
           {/* <Hero /> */}
           <Stacks />
+          <Work />
           <About />
           <Container />
           

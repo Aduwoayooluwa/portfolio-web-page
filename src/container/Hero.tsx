@@ -10,9 +10,19 @@ import styles from './styles.module.css'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import Chair from '@/components/threejs/Chair'
+import { Html, useProgress } from '@react-three/drei'
 
 
 type Props = {}
+
+const Loader = () => {
+    const { progress } = useProgress()
+
+    return (
+        <Html center>{progress}% Loaded
+        </Html>
+        )
+}
 
 const Hero = (props: Props) => {
     const date = new Date()
@@ -37,6 +47,7 @@ const Hero = (props: Props) => {
             }),
             []
         )
+        
 
     return (
         <>
@@ -92,12 +103,15 @@ const Hero = (props: Props) => {
 
                 <p className=' w-full text-xs font-extrabold text-center md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {get_current_time}</p>
 
-                <section className=' flex justify-between md:flex-row flex-col p-10 mt-10 md:mt-20 backdrop-blur-2xl bg-white/20 text-white z-20  w-4/5 md:h-[400px] h-fit' >
+                <section className=' flex justify-between md:flex-row flex-col p-10 mt-10 md:mt-20 backdrop-blur-2xl bg-white/20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
                     <div className='w-full h-fit'>
                         
                         <p className="font-medium md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
-                        <p className='font-bold text-[2.2rem]'>I am Aduwo Ayooluwa</p>
-                        <summary className='list-none w-full md:w-1/2 my-3'>A Human Spider with 3+ years of experience in creating web for businesses and enterprises</summary>
+                        <p className='font-bold text-2xl md:text-[2.2rem]'>I am Aduwo Ayooluwa</p>
+                        <div className='border rounded-md p-2 mr-2 my-3'>
+                            <code color='' className='list-none w-full md:w-1/2 my-3 bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500'>A Human Spider with 3+ years of experience in creating web for businesses and enterprises</code>
+                        </div>
+                        
                     </div>
                    
                 
