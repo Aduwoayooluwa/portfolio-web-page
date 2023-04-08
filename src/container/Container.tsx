@@ -5,7 +5,7 @@ type Props = {}
 
 const Container = (props: Props) => {
     return (
-        <div className='h-fit py-5 w-full grid place-items-center bg-slate-800'>
+        <div id='footer' className='h-fit py-5 w-full grid place-items-center bg-[#1B2430] saturate-100'>
             
             <section className='z-20 grid place-items-center py-10 px-5  h-fit bg-slate-900 w-full md:w-2/3'>
             <p className='text-white font-semibold text-2xl'>Contact Me</p>

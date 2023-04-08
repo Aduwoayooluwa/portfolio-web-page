@@ -14,11 +14,12 @@
   
 }
 
-* p {
+#about p, #work p, #hero p, #footer p {
   background: -webkit-linear-gradient(#eee, #B5D5C5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* Hide scrollbar for IE, Edge and Firefox */
 #project-scroll {
   -ms-overflow-style: none;  /* IE and Edge */

@@ -42,7 +42,7 @@ const experience = [
 
 const Work = (props: Props) => {
     return (
-        <main className='w-full bg-slate-700 h-fit p-3 flex flex-col items-center'>
+        <main id='work' className='w-full bg-[#1B2430] saturate-100 h-fit p-3 flex flex-col items-center'>
             <div className='w-4/5 z-10'>
                 <p className='font-bold text-xl md:text-2xl text-center  text-slate-300 py-4'>Work Experiences</p>
 

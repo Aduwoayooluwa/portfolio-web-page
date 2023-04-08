@@ -4,9 +4,9 @@ type Props = {}
 
 const About = (props: Props) => {
     return (
-        <div className='saturate-50 grid place-items-center py-10 px-2 md:p-10 h-fit md:h-[700px] w-full text-white'>
+        <div id='about' className='bg-[#1B2430] saturate-100 grid place-items-center py-10 px-2 md:p-10 h-fit md:h-[700px] w-full text-white'>
             
-            <summary className=' z-10 bg-[#191825] py-10 w-full md:w-2/3 px-5 leading-8 shadow rounded-lg'>
+            <summary className=' z-10 bg-slate-900 py-10 w-full md:w-2/3 px-5 leading-8 shadow rounded-lg'>
             <p className='text-center font-semibold text-sm md:text-2xl mb-3'>About Me</p>
                 <p className='mb-3'>
                 I am an experienced web developer with a passion for creating innovative and dynamic applications. 

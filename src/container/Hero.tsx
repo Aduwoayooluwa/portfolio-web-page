@@ -51,11 +51,11 @@ const Hero = (props: Props) => {
 
     return (
         <>
-        <div className='-z-10'>
-            <Particles />
+        <div  className='-z-10'>
+            {/* <Particles /> */}
         </div>            
-            <animated.div style={{ background }} className={styles.background} />
-            <main className='bg-[#2C3333] h-screen w-full flex flex-col items-center justify-center'>
+            <animated.div id='hero' style={{ background }} className={styles.background} />
+            <main className='bg-[#1B2430] saturate-100 h-screen w-full flex flex-col items-center justify-center'>
                 {/* <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>
                     <Suspense fallback={(<p>Error Loading</p>)}>
                     <Canvas>
@@ -103,17 +103,16 @@ const Hero = (props: Props) => {
 
                 <p className=' w-full text-xs font-extrabold text-center md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {get_current_time}</p>
 
-                <section className=' flex justify-between md:flex-row flex-col p-10 mt-10 md:mt-20 backdrop-blur-2xl bg-white/20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
+                <section className=' flex justify-between md:flex-row flex-col mt-10 md:mt-20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
                     <div className='w-full h-fit'>
                         
-                        <p className="font-medium md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
+                        <p className="font-medium w-full md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
                         <p className='font-bold text-2xl md:text-[2.2rem]'>I am Aduwo Ayooluwa</p>
                         <div className='border rounded-md p-2 mr-2 my-3'>
                             <code color='' className='list-none w-full md:w-1/2 my-3 bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500'>A Human Spider with 3+ years of experience in creating web for businesses and enterprises</code>
                         </div>
                         
                     </div>
-                   
                 
                     <section className='w-full '>
                     {/* <div className='w-full'>
