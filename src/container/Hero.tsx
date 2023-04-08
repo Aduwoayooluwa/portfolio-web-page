@@ -114,7 +114,7 @@ const Hero = (props: Props) => {
                         </div>
                         
                     </div>
-                    <div className='z-20 w-full bg-red-400 flex md:hidden mt-10 h-full '>
+                    <div className='z-20 w-full flex md:hidden mt-10 h-full '>
                         <Suspense fallback={(<div>Error</div>)}>
                             <Canvas>
                                 <Chair />
