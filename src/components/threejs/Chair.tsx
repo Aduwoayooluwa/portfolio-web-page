@@ -9,7 +9,7 @@ const Chair = (props: Props) => {
     const group: any = React.useRef(null)
     return (
         <React.Fragment>
-            <mesh scale={5}>    
+            <mesh scale={0.7}>    
                 <ambientLight />
                 <primitive object={gltf.scene} />
             </mesh>
@@ -17,6 +17,6 @@ const Chair = (props: Props) => {
     )
 }
 
-useGLTF.preload('/chair/scene.gltf')
+useGLTF.preload('/anim/desktop_pc/scene.gltf')
 
 export default Chair

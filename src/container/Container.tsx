@@ -9,11 +9,11 @@ const Container = (props: Props) => {
             
             <section className='z-20 grid place-items-center py-10 px-5  h-fit bg-slate-900 w-full md:w-2/3'>
             <p className='text-white font-semibold text-2xl'>Contact Me</p>
-                <input type='text' placeholder='Enter your name' className='w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3  border-slate-700 rounded-md'/>
+                <input type='text' placeholder='Enter your name' className='md:w-3/5 w-full border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3  border-slate-700 rounded-md'/>
             
-                <input type='text' placeholder='Enter Subject' className='w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3 border-slate-700 rounded-md'/>
+                <input type='text' placeholder='Enter Subject' className='w-full md:w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3 border-slate-700 rounded-md'/>
             
-                <textarea className='w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3 h-[300px]  border-slate-700 rounded-md'>
+                <textarea className='w-full md:w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3 h-[300px]  border-slate-700 rounded-md'>
 
                 </textarea>
 

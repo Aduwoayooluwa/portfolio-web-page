@@ -12,9 +12,9 @@ const Moon = (props: Props) => {
 })
     return (
     <>
-        <ambientLight intensity={0.2} />
+        <ambientLight intensity={1.2} />
         <directionalLight />
-        <mesh scale={1.5}>
+        <mesh scale={1.2}>
         <sphereGeometry  />
         <RandomizedLight amount={8} radius={5} ambient={0.5} position={[5, 3, 2]} bias={0.001} />
         <meshStandardMaterial {...mapping}/>

@@ -12,7 +12,7 @@ import { OrbitControls } from '@react-three/drei'
 import Chair from '@/components/threejs/Chair'
 import { Html, useProgress } from '@react-three/drei'
 import { DragControls } from 'three-stdlib'
-
+import { useGeolocation, useScrolling , useBattery, useLocation } from 'react-use';
 
 type Props = {}
 
@@ -26,6 +26,7 @@ const Loader = () => {
 }
 
 const Hero = (props: Props) => {
+    const { charging }: any = useBattery()
     const date = new Date()
     const get_current_time = date.toUTCString()
     console.log(get_current_time)
@@ -90,7 +91,7 @@ const Hero = (props: Props) => {
                     <Suspense fallback={(<p>Error Loading</p>)}>
                         <Canvas>
                             <Moon />
-                            <OrbitControls autoRotate autoRotateSpeed={4} />
+                            <OrbitControls autoRotate autoRotateSpeed={8} />
                         </Canvas>
 
                     </Suspense>
@@ -102,9 +103,12 @@ const Hero = (props: Props) => {
                     <BoxApp />
                 </div>
 
-                <p className=' w-full text-xs font-extrabold text-center md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {get_current_time}</p>
+                <div className='flex flex-row mt-20 md:flex-col items-start md:items-center w-full'>
+                    <p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {get_current_time}</p>
+                    { charging && (<p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Your phone is Charging Currently</p>)}
+                </div>
 
-                <section className=' flex justify-between md:flex-row flex-col mt-10 md:mt-20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
+                <section className=' flex justify-between md:flex-row flex-col mt-14 md:mt-20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
                     <div className='w-full h-fit'>
                         
                         <p className="font-medium w-full md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
@@ -114,11 +118,11 @@ const Hero = (props: Props) => {
                         </div>
                         
                     </div>
-                    <div className='z-20 w-full flex md:hidden mt-10 h-full '>
+                    <div className='z-20 w-full flex md:hidden mt-14 h-full '>
                         <Suspense fallback={(<div>Error</div>)}>
                             <Canvas>
                                 <Chair />
-                                <OrbitControls />
+                                <OrbitControls enableZoom={false}/>
                             </Canvas>
                             
                         </Suspense>
@@ -128,11 +132,11 @@ const Hero = (props: Props) => {
                     {/* <div className='w-full'>
                     <TextP name='Coding Pastor' />
                     </div> */}
-                    <div className='hidden md:flex z-20 mt-10 md:mt-0 h-full '>
+                    <div className='hidden md:flex z-20 mt-10  h-full '>
                         <Suspense fallback={(<div>Error</div>)}>
                             <Canvas>
                                 <Chair />
-                                <OrbitControls />
+                                <OrbitControls enableZoom={true}/>
                                 
                             </Canvas>
                             

@@ -33,7 +33,7 @@ const Navigation = (props: Props) => {
 
 
         return (
-        <aside id="navbar" onScroll={handleScroll} className={`${scrollHeight > 10 && 'bg-black'} ${scrollHeight > 300 && scrollHeight < 1000 && 'bg-red-600'} ${scrollHeight > 1000 && scrollHeight < 2000 && 'bg-red-900'} ${scrollHeight > 2000 && scrollHeight < 3000 && 'bg-indigo-700'}  fixed z-50 w-full grid place-items-center py-4 text-white`}>
+        <aside id="navbar" onScroll={handleScroll} className={`${isOpen && 'h-screen bg-[#1B2430]'} ${scrollHeight > 10 &&  scrollHeight < 300 && !isOpen &&  'bg-white/10 backdrop-blur-md'} ${scrollHeight > 300 && scrollHeight < 1000 && !isOpen && 'bg-[#1B2430]/20 backdrop-blur-md'} ${scrollHeight > 1000 && scrollHeight < 2000 && !isOpen && 'bg-black/20 backdrop-blur-md'} ${scrollHeight > 2000 && scrollHeight < 3000 && !isOpen && 'bg-[#1B2430]/20 backdrop-blur-md'} ${scrollHeight > 3000 && !isOpen && 'bg-black/50 backdrop-blur-md'}  fixed z-50 w-full grid place-items-center py-4 text-white`}>
             <nav  className='md:flex items-center hidden justify-between w-3/5'>
                 {
                     navItems.map((item, index) => {
