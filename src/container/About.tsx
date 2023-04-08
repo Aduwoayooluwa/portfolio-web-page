@@ -4,7 +4,7 @@ type Props = {}
 
 const About = (props: Props) => {
     return (
-        <div className='bg-[#191825] grid place-items-center py-10 px-2 md:p-10 h-fit md:h-[700px] w-full text-white'>
+        <div className='saturate-50 grid place-items-center py-10 px-2 md:p-10 h-fit md:h-[700px] w-full text-white'>
             
             <summary className=' z-10 bg-[#191825] py-10 w-full md:w-2/3 px-5 leading-8 shadow rounded-lg'>
             <p className='text-center font-semibold text-sm md:text-2xl mb-3'>About Me</p>

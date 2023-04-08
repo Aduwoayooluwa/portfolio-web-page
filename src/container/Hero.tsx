@@ -56,7 +56,7 @@ const Hero = (props: Props) => {
         </div>            
             <animated.div style={{ background }} className={styles.background} />
             <main className='bg-[#2C3333] h-screen w-full flex flex-col items-center justify-center'>
-                <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>
+                {/* <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>
                     <Suspense fallback={(<p>Error Loading</p>)}>
                     <Canvas>
                         <Hobject img={'github.png'}/>
@@ -64,9 +64,9 @@ const Hero = (props: Props) => {
                     </Canvas>
 
                 </Suspense>
-                </section>
+                </section> */}
 
-                <section className='absolute right-[10px] top-[45rem] md:top-[40rem]'>
+                {/* <section className='absolute right-[10px] top-[45rem] md:top-[40rem]'>
                     <Suspense fallback={(<p>Error Loading</p>)}>
                     <Canvas>
                         <Hobject img={'hashnode.png'}/>
@@ -74,8 +74,8 @@ const Hero = (props: Props) => {
                     </Canvas>
 
                 </Suspense>
-                </section>
-                <section className='absolute z-30 left-10 top-[40rem]'>
+                </section> */}
+                {/* <section className='absolute z-30 left-10 top-[40rem]'>
                     <Suspense fallback={(<p>Error Loading</p>)}>
                     <Canvas>
                         <Hobject img={'linkedin.png'}/>
@@ -83,7 +83,7 @@ const Hero = (props: Props) => {
                     </Canvas>
 
                 </Suspense>
-                </section>
+                </section> */}
 
                 <div className='w-1/4 absolute top-[3rem] md:top-[2rem] right-20'>
                     <Suspense fallback={(<p>Error Loading</p>)}>

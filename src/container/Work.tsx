@@ -1,6 +1,7 @@
+import { projects } from '@/utils/projects'
 import Image from 'next/image'
 import React from 'react'
-
+import { BsArrowUpRightCircle } from 'react-icons/bs'
 type Props = {}
 
 const experience = [
@@ -38,6 +39,7 @@ const experience = [
     },
 
 ]
+
 const Work = (props: Props) => {
     return (
         <main className='w-full bg-slate-700 h-fit p-3 flex flex-col items-center'>
@@ -49,21 +51,18 @@ const Work = (props: Props) => {
                         
 
                         {
-                            experience.map((data, index) => {
+                            projects.map((data, index) => {
                                 return(
-                                    <div key={index} className='my-3 border rounded-md shadow bg-slate-900 text-slate-300  overflow-hidden p-4'>
-                                        <p className='leading-8 font-medium text-xl tracking-wide '>{data.name}</p>
-                                        <small className=''>{data.job_title}</small>
-                                        <br></br>
-                                        <i className='text-xs'>{data.date_joined} to {data.date_left}</i>
-                                        <br></br>
-                                        <p className='text-sm font-medium'>Stack Used</p>
-                                        <div className='grid grid-cols-2 gap-4 content-center'>{data.stacks.map((item, index) => {
+                                    <div key={index} className='my-3 shadow bg-slate-900 text-slate-300  overflow-hidden p-4'>
+                                        <p className='leading-8 font-medium text-xl tracking-wide '>{data.title}</p>
+                                        <small className=''>{data.desc}</small>
+
+                                        <div className='my-3 grid grid-cols-2 gap-4 content-center'>{data.stacks.map((item, index) => {
                                             return (
                                                 <li className='border text-xs text-center hover:bg-slate-800 hover:text-slate-300 rounded p-2 border-slate-400 list-none' key={index}>{item}</li>
                                             )
                                         })}</div>
-                                        <small>Visit <a href={data.website}>Website</a></small>
+                                        <span className='flex items-center'><BsArrowUpRightCircle /> <p className='ml-3'>Visit <a href={data.demo}>Demo</a></p></span>
                                     </div>
                                 )
                             })

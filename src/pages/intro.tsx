@@ -1,16 +1,24 @@
-import Intro from '@/components/threejs/Intro'
-import About from '@/container/About'
-import Test from '@/container/Test'
 import React from 'react'
-
+import {useScroll, animated} from '@react-spring/web'
+import About from '@/container/About'
 type Props = {}
 
-const intro = (props: Props) => {
+const Intro = (props: Props) => {
+  const scrolling  = useScroll()
+  console.log('22')
+  console.log(scrolling.scrollYProgress)
+
   return (
     <div>
-        <About />
+      
+      <About />
+      <animated.div style={{opacity: scrolling.scrollYProgress}}>
+      <About />
+      </animated.div>
+    
+    <About />
     </div>
   )
 }
 
-export default intro
+export default Intro

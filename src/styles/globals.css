@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,9 +10,15 @@
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  
 }
 
+* p {
+  background: -webkit-linear-gradient(#eee, #B5D5C5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* Hide scrollbar for IE, Edge and Firefox */
 #project-scroll {
   -ms-overflow-style: none;  /* IE and Edge */

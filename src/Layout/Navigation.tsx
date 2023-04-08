@@ -29,7 +29,6 @@ const Navigation = (props: Props) => {
 
     const { handleScroll, navColor, setNavColor, scrollHeight } = React.useContext(ScrollContext)
 
-    console.log('scrollHeight', scrollHeight)
     
 
 

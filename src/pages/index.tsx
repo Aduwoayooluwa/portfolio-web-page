@@ -12,10 +12,12 @@ import Test from '@/container/Test'
 import Container from '@/container/Container'
 import { Suspense, UIEvent, useEffect, useState } from 'react'
 import Work from '@/container/Work'
+import { useScroll, animated } from '@react-spring/web'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { scrollYProgress } = useScroll()
   
   return (
     <>
@@ -28,11 +30,22 @@ export default function Home() {
       <main className={styles.main}>
         <>
             <Hero />
-          <Projects />
-          {/* <Hero /> */}
-          <Stacks />
-          <Work />
-          <About />
+            {/* <animated.div>
+              <Projects />
+            </animated.div> */}
+          
+          <animated.div>
+            <Stacks />
+          </animated.div>
+          
+          <animated.div>
+            <Work />
+          </animated.div>
+          
+          <animated.div>
+            <About />
+          </animated.div>
+          
           <Container />
           
         </>
