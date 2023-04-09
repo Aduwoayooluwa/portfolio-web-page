@@ -10,7 +10,7 @@ const Footer = (props: Props) => {
         <div id="footer"  className='font-medium'>
 
             <section className='flex items-center py-3 justify-around'>
-                <div className='leading-8 items-start flex flex-col'>
+                <div className='leading-8 font-semibold items-start flex flex-col'>
                     <p className='flex items-center'><span className="text-blue-700"><SiHashnode /></span><a className="ml-3" href='https://hashnode.com/@codingpastor'>Hashnode</a></p>
                     <p className='flex items-center'><span><SiGithub /></span><a className="ml-3" href='https://github/AduwoAyooluwa'>Github</a></p>
                     <p className='flex items-center'><span className='text-blue-500'><SiLinkedin /></span><a className="ml-3" href='https://linkedin.com/in/aduwo-ayooluwa'>LinkedIn</a></p>
