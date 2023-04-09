@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Ubuntu&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +10,7 @@
 
 * {
   font-family: 'Ubuntu', sans-serif;
+  
   
 }
 
@@ -26,3 +26,6 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+#intro_p {
+  font-family: 'Dancing Script', sans-serif;
+}

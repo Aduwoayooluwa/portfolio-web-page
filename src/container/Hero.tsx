@@ -121,7 +121,7 @@ const Hero = (props: Props) => {
                         <p className="font-medium w-full md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
                         <p className='font-bold text-2xl md:text-[2.2rem]'>I am Aduwo Ayooluwa</p>
                         <div className='border rounded-md p-2 mr-2 my-3'>
-                            <code color='' className='list-none w-full md:w-1/2 my-3 bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500'>A Human Spider with 3+ years of experience in creating web for businesses and enterprises</code>
+                            <code color='' className='list-none w-full md:w-1/2 my-3 bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500'>A Human Spider with 2+ years of experience in creating web for businesses and enterprises</code>
                         </div>
                         
                     </div>
