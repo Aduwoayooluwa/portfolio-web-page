@@ -23,8 +23,10 @@ const Footer = (props: Props) => {
 
                 <div className='w-1/2 items-end'>
                     {/* <p className=''>Click to contact me via whatsapp</p> */}
-                    <div className='h-[100px] w-full z-10 '>
-                        <BoxApp />
+                    <div className='h-[100px] w-full z-10 ' onClick={() => {
+                        window.location.replace("https://wa.me/8144341503")
+                    }}>
+                        <BoxApp />  
                         
                     </div>
                     
