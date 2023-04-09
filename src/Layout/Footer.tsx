@@ -15,10 +15,10 @@ const Footer = (props: Props) => {
 
             <section className='flex item-center  py-3 my-3 justify-between'>
                 <div className='leading-8 font-semibold items-start flex flex-col'>
-                    <p className='flex items-center'><span className="text-blue-700"><SiHashnode /></span><a className="ml-3" href='https://hashnode.com/@codingpastor'>Hashnode</a></p>
-                    <p className='flex items-center'><span><SiGithub /></span><a className="ml-3" href='https://github/AduwoAyooluwa'>Github</a></p>
-                    <p className='flex items-center'><span className='text-blue-500'><SiLinkedin /></span><a className="ml-3" href='https://linkedin.com/in/aduwo-ayooluwa'>LinkedIn</a></p>
-                    <p className='flex items-center'><span className='text-yellow-500'><SiMicrodotblog /></span><a className="ml-3" href='https://codingpastor.dev'>My Blog</a></p>
+                    <p onClick={() => window.location.replace('https://hashnode.com/@codingpastor')}className='flex items-center'><span className="text-blue-700"><SiHashnode /></span><a className="ml-3" href='https://hashnode.com/@codingpastor'>Hashnode</a></p>
+                    <p onClick={() => window.location.replace('https://github/AduwoAyooluwa')} className='flex items-center'><span><SiGithub /></span><a className="ml-3" href=''>Github</a></p>
+                    <p onClick={() => window.location.replace('https://linkedin.com/in/aduwo-ayooluwa')} className='flex items-center'><span className='text-blue-500'><SiLinkedin /></span><a className="ml-3" href=''>LinkedIn</a></p>
+                    <p onClick={() => window.location.replace('https://codingpastor.dev')} className='flex items-center'><span className='text-yellow-500'><SiMicrodotblog /></span><a className="ml-3" href='https://codingpastor.dev'>My Blog</a></p>
                 </div>
 
                 <div className='w-1/2 items-end'>

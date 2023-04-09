@@ -68,6 +68,7 @@ const Hero = (props: Props) => {
             
         </div> 
         
+        
             <animated.div id='hero' style={{ background }} className={styles.background} />
             <main className='bg-[#1B2430] saturate-100 h-screen w-full flex flex-col items-center justify-center'>
                 {/* <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>
@@ -127,7 +128,7 @@ const Hero = (props: Props) => {
                             <code color='' className='list-none w-full md:w-1/2 my-3 bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500'>A Human Spider with 2+ years of experience in creating web for businesses and enterprises</code>
                         </div>
 
-                        <div className=' left-0  md:left-28  my-6 md:my-3'>
+                        <div className=' left-0 hidden md:flex md:left-28  my-6 md:my-3'>
                         <Button onClick={() => {
 
                         }} color='' name="View My Resume" />

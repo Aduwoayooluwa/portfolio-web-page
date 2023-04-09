@@ -64,6 +64,7 @@ const Container = (props: Props) => {
                 </textarea>
 
                 <Button color='#2F58CD' onClick={(e: any) => handleSubmit(e)} name='Send Message'/>
+        
             </section>
             
         </div>

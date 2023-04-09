@@ -16,6 +16,7 @@ import React, { Suspense, UIEvent, useEffect, useState } from 'react'
 import Work from '@/container/Work'
 import { useScroll, useSpring, animated } from '@react-spring/web'
 import { useAudio } from 'react-use'
+import Bottom from '@/Layout/Bottom'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -38,7 +39,6 @@ const AllComponents = () => {
           <Work />
           <About />        
         <Container />
-        
       </>
     </main>
     <footer>
@@ -111,7 +111,7 @@ export default function Home() {
         <button className='p-2 text-white bg-red-100 mt-40 ml-10' onClick={controls.unmute}>UnMute</button> */}
         {/* <button onClick={handleMute}>Do both</button> */}
         <animated.div className="page" style={pageAnimation}>
-          
+            
             <AllComponents />
         </animated.div>
         
