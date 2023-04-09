@@ -95,7 +95,8 @@ export default function Home() {
         <title>Coding Pastor</title>
         <meta name="description" content="I am a Professional website Developer with years of experience building websites for businesses and enterprises." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/ayo.jpg" />
+        <link rel="icon" href="/ayo.jpg" />
       </Head>
       <div id="hero" className={`h-screen bg-[#1B2430] flex flex-col items-center justify-center p-4 ${showPage && 'hidden'}`}>
           
