@@ -3,6 +3,8 @@ import ScrollProvider from '@/context/ScrollContext'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [pageShown, setPageShown] = useState<string | null>('')
@@ -15,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navigation />
 
       <Component {...pageProps} />
+      <ToastContainer />
     </>
     
   </ScrollProvider>

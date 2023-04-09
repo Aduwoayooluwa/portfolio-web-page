@@ -67,7 +67,7 @@ const Hero = (props: Props) => {
             {/* <Particles /> */}
             
         </div> 
-                  
+        
             <animated.div id='hero' style={{ background }} className={styles.background} />
             <main className='bg-[#1B2430] saturate-100 h-screen w-full flex flex-col items-center justify-center'>
                 {/* <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>
@@ -157,7 +157,9 @@ const Hero = (props: Props) => {
                     </div>
 
                     <div className='md:absolute  md:left-10  my-6 md:my-3'>
-                        <Button color='' name="View My Resume" />
+                        <Button onClick={() => {
+                            
+                        }} color='' name="View My Resume" />
                     </div>
                     
                 </div>
