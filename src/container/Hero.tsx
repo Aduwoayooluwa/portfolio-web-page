@@ -111,9 +111,7 @@ const Hero = (props: Props) => {
 
                 
                 
-                {/* <div className='w-1/3 absolute md:top-10 top-[2rem] left-20'>
-                    <BoxApp />
-                </div> */}
+                
 
                 <div className='flex flex-row mt-20 md:flex-col items-start md:items-center w-full'>
                     <p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {currentDate}</p>
