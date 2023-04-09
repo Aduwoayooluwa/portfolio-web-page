@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { useTexture } from '@react-three/drei'
 import { AccumulativeShadows, RandomizedLight} from '@react-three/drei'
@@ -12,7 +13,7 @@ const Moon = (props: Props) => {
 })
     return (
     <>
-        <ambientLight intensity={1.2} />
+        {/* <ambientLight intensity={1.2} /> */}
         <directionalLight />
         <mesh scale={1.2}>
         <sphereGeometry  />

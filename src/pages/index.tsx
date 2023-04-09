@@ -10,14 +10,51 @@ import About from '@/container/About'
 import Footer from '@/Layout/Footer'
 import Test from '@/container/Test'
 import Container from '@/container/Container'
-import { Suspense, UIEvent, useEffect, useState } from 'react'
+import React, { Suspense, UIEvent, useEffect, useState } from 'react'
 import Work from '@/container/Work'
-import { useScroll, animated } from '@react-spring/web'
+import { useScroll, useSpring, animated } from '@react-spring/web'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const AllComponents = () => {
+  return (
+    <React.Fragment>
+    <main>
+        <>
+          <Suspense fallback={(<div>Error Bringing Up Page</div>)}>
+            <Hero />
+          </Suspense>
+          
+          {/* <animated.div>
+            <Projects />
+          </animated.div> */}
+      
+          <Stacks />
+          <Work />
+          <About />        
+        <Container />
+        
+      </>
+    </main>
+    <footer>
+    <Footer />
+  </footer>
+  </React.Fragment>
+  )
+}
+
 export default function Home() {
   const { scrollYProgress } = useScroll()
+  const [showPage, setShowPage] = useState(false);
+
+  const pageAnimation = useSpring({
+    transform: showPage ? 'translateY(0%)' : 'translateY(100%)',
+    opacity: showPage ? 1 : 0,
+  });
+
+  const handleClick = () => {
+    setShowPage(true);
+  };
   
   return (
     <>
@@ -27,33 +64,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <>
-            <Hero />
-            {/* <animated.div>
-              <Projects />
-            </animated.div> */}
+      <main className='bg-black h-screen'>
+        <button className='bg-red-600 p-4 mt-20' onClick={handleClick}>Helklo world</button>
+
+        <animated.div className="page" style={pageAnimation}>
           
-          <animated.div>
-            <Stacks />
-          </animated.div>
-          
-          <animated.div>
-            <Work />
-          </animated.div>
-          
-          <animated.div>
-            <About />
-          </animated.div>
-          
-          <Container />
-          
-        </>
+            <AllComponents />
+        </animated.div>
         
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      
     </>
   )
 }

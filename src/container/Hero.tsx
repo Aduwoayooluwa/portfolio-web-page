@@ -1,10 +1,11 @@
+"use client"
 import Particles from '@/components/others/Particles'
 import BoxApp from '@/components/threejs/Box'
 import  { TextP } from '@/components/threejs/Button'
 import App from '@/components/threejs/Scene'
 import SpApp from '@/components/threejs/Sphere'
 import Button from '@/components/threejs/Spring'
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { useSpring, animated, config } from '@react-spring/web'
 import styles from './styles.module.css'
 import { Canvas } from '@react-three/fiber'
@@ -27,9 +28,15 @@ const Loader = () => {
 
 const Hero = (props: Props) => {
     const { charging }: any = useBattery()
+
+    // setting the date
     const date = new Date()
-    const get_current_time = date.toUTCString()
-    console.log(get_current_time)
+    const [currentDate, setCurrentDate] = useState('')
+    
+    useEffect(() => {
+        setCurrentDate(date.toUTCString())
+    }, [])
+
     const Hobject = React.lazy(() => import('@/components/threejs/Hobjects'))
     const Moon = React.lazy(() => import('@/components/threejs/Moon'))
     const [{ background }] = useSpring(
@@ -87,7 +94,7 @@ const Hero = (props: Props) => {
                 </Suspense>
                 </section> */}
 
-                <div className='w-1/4 absolute top-[3rem] md:top-[2rem] right-20'>
+                {/* <div className='w-1/4 absolute top-[3rem] md:top-[2rem] right-20'>
                     <Suspense fallback={(<p>Error Loading</p>)}>
                         <Canvas>
                             <Moon />
@@ -95,16 +102,16 @@ const Hero = (props: Props) => {
                         </Canvas>
 
                     </Suspense>
-                </div>
+                </div> */}
 
                 
                 
-                <div className='w-1/3 absolute md:top-10 top-[2rem] left-20'>
+                {/* <div className='w-1/3 absolute md:top-10 top-[2rem] left-20'>
                     <BoxApp />
-                </div>
+                </div> */}
 
                 <div className='flex flex-row mt-20 md:flex-col items-start md:items-center w-full'>
-                    <p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {get_current_time}</p>
+                    <p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {currentDate}</p>
                     { charging && (<p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Your phone is Charging Currently</p>)}
                 </div>
 

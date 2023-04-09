@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.0.3",
     "@react-spring/parallax": "^9.7.1",
     "@react-spring/web": "^9.7.1",
     "@react-three/drei": "^9.62.2",
