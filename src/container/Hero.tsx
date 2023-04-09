@@ -14,6 +14,7 @@ import Chair from '@/components/threejs/Chair'
 import { Html, useProgress } from '@react-three/drei'
 import { DragControls } from 'three-stdlib'
 import { useGeolocation, useScrolling , useBattery, useLocation } from 'react-use';
+import RainbowLineAnimation from '@/components/others/RainbowLineAnimation'
 
 type Props = {}
 
@@ -60,9 +61,12 @@ const Hero = (props: Props) => {
 
     return (
         <>
-        <div  className='-z-10'>
+        {/* <RainbowLineAnimation /> */}
+        <div  className='z-10'>
             {/* <Particles /> */}
-        </div>            
+            
+        </div> 
+                  
             <animated.div id='hero' style={{ background }} className={styles.background} />
             <main className='bg-[#1B2430] saturate-100 h-screen w-full flex flex-col items-center justify-center'>
                 {/* <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>

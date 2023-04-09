@@ -1,45 +1,54 @@
 export const stacks = [
     {
-        img: '/assets/ts.png'
+        img: '/assets/typescript.png'
     },
     {
-        img: '/assets/react.png'
+        img: '/assets/reactjs.png'
     },
     {
-        img: '/assets/s_c.png'
+        img: '/assets/html.png'
     },
     {
-        img: '/assets/threejs.png'
+        img: '/assets/nextjs.svg'
     },
     {
-        img: '/assets/wordpress.png'
+        img: '/assets/threejs.svg'
+    },
+    {
+        img: '/assets/vue.png'
+    },
+    {
+        img: '/assets/sanity.png'
+    },
+    {
+        img: '/assets/git.png'
+    },
+    {
+        img: '/assets/mongodb.png'
+    },
+    {
+        img: '/assets/tailwind.png'
+    },
+    {
+        img: '/assets/javascript.png'
+    },
+    {
+        img: '/assets/redux.png'
+    },
+    {
+        img: '/assets/css.png'
+    },
+    {
+        img: '/assets/figma.png'
     },
     {
         img: '/assets/supabase.png'
     },
     {
-        img: '/assets/node.png'
-    },
-    {
-        img: '/assets/mongo.png'
+        img: '/assets/nodejs.png'
     },
     {
         img: '/assets/svelte.png'
-    },
-    {
-        img: '/assets/tailwind.jpg'
-    },
-    {
-        img: '/assets/webgl.jpeg'
-    },
-    {
-        img: '/assets/python.jpg'
-    },
-    {
-        img: '/assets/css.webp'
-    },
-    {
-        img: '/assets/express.png'
     },
     {
         img: '/assets/astro.png'
@@ -51,7 +60,7 @@ export const stacks = [
         img: '/assets/firebase.png'
     },
     {
-        img: '/assets/nextjs.avif'
+        img: '/assets/wordpress.png'
     },
     
 ]
