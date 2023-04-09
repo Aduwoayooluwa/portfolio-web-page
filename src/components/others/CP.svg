@@ -1,0 +1,22 @@
+<svg viewBox="0 0 500 500">
+    <rect x="0" y="0" width="500" height="500" fill="#1A202C" />
+    <text x="50%" y="50%" fill="url(#rainbow-gradient)" font-size="72" text-anchor="middle">
+        Coding Pastor
+    </text>
+    <defs>
+        <linearGradient id="rainbow-gradient" x1="0" x2="100%" y1="0" y2="0">
+        <stop offset="0%" stop-color="#ED8936">
+            <animate attributeName="offset" values="0;1;0" dur="4s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="33%" stop-color="#E53E3E">
+            <animate attributeName="offset" values="0;1;0" dur="4s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="67%" stop-color="#8B5CF6">
+            <animate attributeName="offset" values="0;1;0" dur="4s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#48BB78">
+            <animate attributeName="offset" values="0;1;0" dur="4s" repeatCount="indefinite" />
+        </stop>
+        </linearGradient>
+    </defs>
+</svg>

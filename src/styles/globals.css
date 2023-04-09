@@ -29,3 +29,20 @@
 #intro_p {
   font-family: 'Dancing Script', sans-serif;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-container {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}

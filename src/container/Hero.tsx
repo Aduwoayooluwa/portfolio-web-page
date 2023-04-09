@@ -15,6 +15,7 @@ import { Html, useProgress } from '@react-three/drei'
 import { DragControls } from 'three-stdlib'
 import { useGeolocation, useScrolling , useBattery, useLocation } from 'react-use';
 import RainbowLineAnimation from '@/components/others/RainbowLineAnimation'
+import BackgroundAnimation from '@/components/others/BackgroundAnimation'
 
 type Props = {}
 
@@ -137,6 +138,9 @@ const Hero = (props: Props) => {
                             </Canvas>
                             
                         </Suspense>
+                    </div>
+                    <div className='z-20 h-ful top-10  absolute right-0 md:right-20 w-full'>
+                        <BackgroundAnimation />
                     </div>
                 
                     <div className='w-full  '>
