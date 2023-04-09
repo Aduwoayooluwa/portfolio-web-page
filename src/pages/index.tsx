@@ -84,10 +84,10 @@ export default function Home() {
   });
 
   const handleClick = () => {
-    setShowPage(true)
-    sessionStorage.setItem('showPage', 'true')
-    setplayBuzz(true)
-  };
+      setShowPage(true)
+      sessionStorage.setItem('showPage', 'true')
+      setplayBuzz(true)
+    };
   
   return (
     <>

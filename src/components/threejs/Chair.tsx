@@ -9,7 +9,7 @@ const Chair = (props: Props) => {
     const group: any = React.useRef(null)
     return (
         <React.Fragment>
-            <mesh scale={0.7}>    
+            <mesh scale={0.7}  position={[-2, -2.2, -2.4]}>    
                 <ambientLight />
                 <primitive object={gltf.scene} />
             </mesh>

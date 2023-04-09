@@ -120,7 +120,7 @@ const Hero = (props: Props) => {
                     { charging && (<p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Your phone is Charging Currently</p>)}
                 </div>
 
-                <section className=' flex justify-between md:flex-row flex-col mt-14 md:mt-20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
+                <section className=' flex justify-between items-center md:flex-row flex-col mt-14 md:mt-20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
                     <div className='w-full h-fit'>
                         
                         <p className="font-medium w-full md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
@@ -143,7 +143,7 @@ const Hero = (props: Props) => {
                         <BackgroundAnimation />
                     </div>
                 
-                    <div className='w-full  '>
+                    <div className='w-full  grid place-items-center'>
                     {/* <div className='w-full'>
                     <TextP name='Coding Pastor' />
                     </div> */}
@@ -158,7 +158,7 @@ const Hero = (props: Props) => {
                         </Suspense>
                     </div>
 
-                    <div className='md:absolute left-10  my-6 md:my-3'>
+                    <div className='md:absolute  md:left-10  my-6 md:my-3'>
                         <Button color='' name="View My Resume" />
                     </div>
                     
