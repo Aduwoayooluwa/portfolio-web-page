@@ -36,7 +36,7 @@ const Navigation = (props: Props) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const { handleScroll, navColor, setNavColor, scrollHeight } = React.useContext(ScrollContext)
-    console.log(scrollHeight)   
+
 
     const handleHamb = () => {
         setIsOpen(!isOpen);

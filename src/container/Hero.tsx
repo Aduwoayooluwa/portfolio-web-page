@@ -113,12 +113,12 @@ const Hero = (props: Props) => {
                 
                 
 
-                <div className='flex flex-row mt-20 md:flex-col items-start md:items-center w-full'>
+                <div className='flex flex-row mt-20 md:mt-0 md:flex-col items-start md:items-center w-full'>
                     <p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {currentDate}</p>
                     { charging && (<p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Your phone is Charging Currently</p>)}
                 </div>
 
-                <section className=' flex justify-between items-center md:flex-row flex-col mt-14 md:mt-20 text-white z-20 h-fit w-4/5 md:h-[400px]' >
+                <section className='px-0 md:px-4 flex justify-center md:justify-between items-center md:flex-row flex-col mt-14 md:mt-0  text-white z-20 h-fit w-4/5 md:h-[400px]' >
                     <div className='w-full h-fit'>
                         
                         <p className="font-medium w-full md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
@@ -126,10 +126,16 @@ const Hero = (props: Props) => {
                         <div className='border rounded-md p-2 mr-2 my-3'>
                             <code color='' className='list-none w-full md:w-1/2 my-3 bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500'>A Human Spider with 2+ years of experience in creating web for businesses and enterprises</code>
                         </div>
+
+                        <div className=' left-0  md:left-28  my-6 md:my-3'>
+                        <Button onClick={() => {
+
+                        }} color='' name="View My Resume" />
+                    </div>
                         
                     </div>
                     <div className='z-20 w-full flex md:hidden mt-14 h-full '>
-                        <Suspense fallback={(<div>Error</div>)}>
+                        <Suspense fallback={(<div>Loading...</div>)}>
                             <Canvas>
                                 <Chair />
                                 <OrbitControls enableZoom={false}/>
@@ -137,28 +143,31 @@ const Hero = (props: Props) => {
                             
                         </Suspense>
                     </div>
-                    <div className='z-20 h-ful top-10  absolute right-0 md:right-20 w-full'>
+                    <div className='z-20 h-ful top-10  absolute md:relative right-0 md:right-20 w-full md:ml-20'>
                         <BackgroundAnimation />
                     </div>
-                
-                    <div className='w-full  grid place-items-center'>
-                    {/* <div className='w-full'>
-                    <TextP name='Coding Pastor' />
-                    </div> */}
-                    <div className='hidden md:flex z-20 mt-10  h-full '>
-                        <Suspense fallback={(<div>Error</div>)}>
+
+                    
+                    <div className='hidden w-1/3 md:flex z-20 mt-10 md:mt-0   h-full '>
+                        <Suspense fallback={(<div>Loading..</div>)}>
                             <Canvas>
                                 <Chair />
-                                <OrbitControls enableZoom={true}/>
+                                <OrbitControls enableZoom={false}/>
                                 
                             </Canvas>
                             
                         </Suspense>
                     </div>
+                    
+                    <div className='w-full  md:hidden  grid place-items-center'>
+                    {/* <div className='w-full'>
+                    <TextP name='Coding Pastor' />
+                    </div> */}
+                    
 
-                    <div className='md:absolute  md:left-10  my-6 md:my-3'>
+                    <div className='flex md:hidden left-0  md:left-28  my-6 md:my-3'>
                         <Button onClick={() => {
-                            
+
                         }} color='' name="View My Resume" />
                     </div>
                     
