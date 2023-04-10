@@ -41,11 +41,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
   });
 
-  console.log(`Received form submission: ${name}, ${email}, ${subject}, ${message}`);
+  console.log(`Received form submission: ${name},  ${subject}, ${message}`);
 
   // Do something with the form data, such as saving it to a database
   const messageStatus = await courier.getMessage(requestId);
-  res.status(200).json({  name, email, subject, message, messageStatus  });
+  res.status(200).json({  name, subject, message, messageStatus  });
 };
 
 export default handler;
