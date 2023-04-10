@@ -1,1 +1,1 @@
-export const web_url = 'https://www.codingpastor.com/ayo.jpg'
+export const web_url = 'https://codingpastor.com/ayo.jpg'

@@ -18,7 +18,7 @@ const Hanger = (props: Props) => {
             <animated.section style={pageAnimation} className='w-full grid place-items-center'>
                 { open &&(
                     <div className='flex list-none justify-evenly items-center w-full md:w-[300px]'>
-                        <li className=''><a className="text-blue-700" href='https://hashnode.com/@codingpastor'><SiHashnode fontSize={30}/></a></li>
+                        <li className=''><a className="text-blue-700 text-sm md:font-lg" href='https://hashnode.com/@codingpastor'><SiHashnode fontSize={30}/></a></li>
                         <li><a className='' href='https://github.com/AduwoAyooluwa'><SiGithub fontSize={30}/></a></li>
                         <li><a className="text-yellow-700" href='https://codingpastor.dev'><SiMicrodotblog fontSize={30}/></a></li>
                         <li><a className='text-blue-600' href='https://linkedin.com/in/aduwo-ayooluwa'><SiLinkedin fontSize={30}/></a></li>

@@ -1,7 +1,10 @@
 import { projects } from '@/utils/projects'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import { BsArrowUpRightCircle } from 'react-icons/bs'
+import { useSprings, animated, config } from '@react-spring/web'
+import { useDrag } from '@use-gesture/react'
+
 type Props = {}
 
 const experience = [
@@ -40,9 +43,40 @@ const experience = [
 
 ]
 
+const fn =
+    (order: number[], active = false, originalIndex = 0, curIndex = 0, y = 0) =>
+    (index: number) =>
+        active && index === originalIndex
+        ? {
+            y: curIndex * 100 + y,
+            scale: 1.1,
+            zIndex: 1,
+            shadow: 15,
+            immediate: (key: string) => key === 'zIndex',
+            config: (key: string) => (key === 'y' ? config.stiff : config.default),
+            }
+        : {
+            y: order.indexOf(index) * 100,
+            scale: 1,
+            zIndex: 0,
+            shadow: 1,
+            immediate: false,
+        }
+
 const Work = (props: Props) => {
+    const order = useRef(experience.map((_: any, index: any) => index)) // Store indicies as a local ref, this represents the item order
+    const [springs, api] = useSprings(experience.length, fn(order.current)) // Create springs, each corresponds to an item, controlling its transform, scale, etc.
+    const bind = useDrag(({ args: [originalIndex], active, movement: [, y] }) => {
+        const curIndex = order.current.indexOf(originalIndex)
+        const curRow = (Math.round((curIndex * 100 + y) / 100), 0, experience.length - 1)
+        const newOrder: any = (order.current, curIndex, curRow)
+        api.start(fn(newOrder, active, originalIndex, curIndex, y)) // Feed springs new style data, they'll animate the view without causing a single render
+        if (!active) order.current = newOrder
+    })
+
     return (
         <main id='work' className='w-full bg-[#1B2430] saturate-100 h-fit p-3 flex flex-col items-center'>
+            
             <div className='w-4/5 z-10'>
                 <p className='font-bold text-xl md:text-2xl text-center  text-slate-300 py-4'>Work Experiences</p>
 
