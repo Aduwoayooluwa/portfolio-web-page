@@ -39,16 +39,9 @@ const Navigation = (props: Props) => {
     const { handleScroll, navColor, setNavColor, scrollHeight } = React.useContext(ScrollContext)
 
 
-    const handleHamb = () => {
-        setIsOpen(!isOpen);
-        setShowPage(true)
-    }
-    
-
-
         return (
-        <aside id="navbar" onScroll={handleScroll} className={`${isOpen && 'h-screen bg-[#1B2430]'} ${scrollHeight > 10 &&  scrollHeight < 300 && !isOpen &&  'bg-white/10 backdrop-blur-md'} ${scrollHeight > 300 && scrollHeight < 1000 && !isOpen && 'bg-[#1B2430]/20 backdrop-blur-md'} ${scrollHeight > 1000 && scrollHeight < 2000 && !isOpen && 'bg-black/20 backdrop-blur-md'} ${scrollHeight > 2000 && scrollHeight < 3000 && !isOpen && 'bg-[#1B2430]/20 backdrop-blur-md'} ${scrollHeight > 3000 && !isOpen && 'bg-black/50 backdrop-blur-md'}  fixed z-50 w-full grid place-items-center py-4 text-white`}>
-            <nav  className='md:flex  items-center hidden justify-between w-full'>
+        <aside id="navbar" onScroll={handleScroll} className={`${isOpen && 'h-screen bg-[#1B2430]'} ${scrollHeight > 10 &&  scrollHeight < 300 && !isOpen &&  'bg-white/10 backdrop-blur-md'} ${scrollHeight > 300 && scrollHeight < 1000 && !isOpen && 'bg-[#1B2430]/20 backdrop-blur-md'} ${scrollHeight > 1000 && scrollHeight < 2000 && !isOpen && 'bg-black/20 backdrop-blur-md'} ${scrollHeight > 2000 && scrollHeight < 3000 && !isOpen && 'bg-[#1B2430]/20 backdrop-blur-md'} ${scrollHeight > 3000 && !isOpen && 'bg-black/50 backdrop-blur-md'}  fixed z-50 w-full  grid place-items-center py-4 text-white`}>
+            <nav  className='md:flex md:w-3/5  items-center hidden justify-between w-full'>
                 {
                     navItems.map((item, index) => {
                         return (
@@ -87,7 +80,15 @@ const Navigation = (props: Props) => {
             
             <section className={`md:hidden  flex ${isOpen ? 'flex-col items-center' : 'flex-row items-center justify-evenly'}`}>
                 <p className='font-medium mr-3'>Coding <span className='font-medium text-green-600'>Pastor</span> <span className='font-medium text-yellow-600'>System</span></p>
-                <Hamburger toggled={isOpen} toggle={handleHamb}/>
+                <Hamburger onToggle={() => {
+                    if (isOpen === true) {
+                        setShowPage(false)
+                    }
+                    else {
+                        setShowPage(true)
+                    }
+                }} toggled={isOpen} toggle={setIsOpen}/>
+                
             </section>
             
         </aside>

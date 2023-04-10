@@ -114,12 +114,22 @@ const Hero = (props: Props) => {
                 
                 
 
-                <div className='flex flex-row mt-20 md:mt-0 md:flex-col items-start md:items-center w-full'>
+                <div className='flex flex-row mt-0 md:mt-0 md:flex-col items-start md:items-center w-full'>
                     <p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {currentDate}</p>
                     { charging && (<p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Your phone is Charging Currently</p>)}
                 </div>
 
                 <section className='px-0 md:px-4 flex justify-center md:justify-between items-center md:flex-row flex-col mt-14 md:mt-0  text-white z-20 h-fit w-4/5 md:h-[400px]' >
+                <div className='z-20 w-full -mt-10 flex md:hidden h-full '>
+                        <Suspense fallback={(<div>Loading...</div>)}>
+                            <Canvas>
+                                <Chair />
+                                <OrbitControls enablePan={false} enableZoom={false}/>
+                            </Canvas>
+                            
+                        </Suspense>
+                    </div>
+
                     <div className='w-full h-fit'>
                         
                         <p className="font-medium w-full md:font-semibold text-sm my-4">Hello there, Welcome to Coding Pastor&apos;s Website</p>
@@ -135,21 +145,13 @@ const Hero = (props: Props) => {
                     </div>
                         
                     </div>
-                    <div className='z-20 w-full flex md:hidden mt-14 h-full '>
-                        <Suspense fallback={(<div>Loading...</div>)}>
-                            <Canvas>
-                                <Chair />
-                                <OrbitControls enablePan={false} enableZoom={false}/>
-                            </Canvas>
-                            
-                        </Suspense>
-                    </div>
-                    <div className='z-20 h-ful top-10  absolute md:relative right-0 md:right-20 w-full md:ml-20'>
+                    
+                    <div className='z-10 h-ful top-10  absolute  right-0 md:right-20 w-full md:w-1/3 md:ml-20'>
                         <BackgroundAnimation />
                     </div>
 
                     
-                    <div className='hidden w-1/3 md:flex z-20 mt-10 md:mt-0   h-full '>
+                    <div className='hidden w-full md:flex z-20 mt-10 md:-mt-20   h-full '>
                         <Suspense fallback={(<div>Loading..</div>)}>
                             <Canvas>
                                 <Chair />

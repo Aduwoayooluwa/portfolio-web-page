@@ -6,7 +6,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
     return (
-        <div className='py-10 px-5 text-center w-full text-white bg-slate-900'>
+        <div className='py-10  px-5 text-center w-full text-white bg-slate-900'>
             <div id="footer" className='w-full grid place-items-center my-3'>
             <p className='font-bold text-[1.8rem]'>Ready To Collaborate?<br></br>Get In Touch!</p>
             
@@ -14,9 +14,9 @@ const Footer = (props: Props) => {
             </div>
         
 
-        <div id="footer"  className='font-medium'>
+        <div id="footer"  className='font-medium md:grid place-items-center w-full'>
 
-            <section className='flex item-center  py-3 my-3 justify-between'>
+            <section className='flex md:w-[3/5] item-center w-full  py-3 my-3 justify-between'>
                 <div className='leading-8 font-semibold items-start flex flex-col'>
                     <p onClick={() => window.location.replace('https://hashnode.com/@codingpastor')}className='flex items-center'><span className="text-blue-700"><SiHashnode /></span><a className="ml-3" href='https://hashnode.com/@codingpastor'>Hashnode</a></p>
                     <p onClick={() => window.location.replace('https://github/AduwoAyooluwa')} className='flex items-center'><span><SiGithub /></span><a className="ml-3" href=''>Github</a></p>
