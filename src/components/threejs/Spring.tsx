@@ -4,6 +4,7 @@ type Props = {
     name: string
     color: string
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+    loading?: boolean
 }
 
 const Button = (props: Props) => {
@@ -18,7 +19,7 @@ const Button = (props: Props) => {
         <div onClick={() => {
             setBtnClick(!btnClick)
         }}>
-            <animated.button onClick={props.onClick} className={`text-white text-sm  cursor-pointer bg-[#2F58CD] rounded-lg w-[250px] shadow px-2 py-4 text-center`} 
+            <animated.button disabled={props.loading} onClick={props.onClick} className={`text-white text-sm  cursor-pointer bg-[#2F58CD] rounded-lg w-[250px] shadow px-2 py-4 text-center`} 
             style={{
                 opacity: x.to({ range: [0, 1], output: [0.3, 1] }),
                 scale: x.to({
@@ -26,7 +27,7 @@ const Button = (props: Props) => {
                     output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
                 }),
             }}>
-                {props.name}
+                {props.loading ? 'processing....' : props.name}
             </animated.button>
         </div>
     )

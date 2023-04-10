@@ -1,10 +1,11 @@
 import Button from '@/components/threejs/Spring'
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify';
 type Props = {}
 
 const Container = (props: Props) => {
+    const [loading, setLoading] = useState(false)
     
     const [inputText, setInputText] = React.useState({
         full_name: "",
@@ -16,11 +17,11 @@ const Container = (props: Props) => {
         const { name, value } = e.target 
 
         setInputText({...inputText, [name]: value })
-        console.log(inputText)
     }
 
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        setLoading(true)
         console.log(window.location.origin)
         if (!inputText.full_name || !inputText.subject || !inputText.message) {
             toast('fill in the details')
@@ -33,20 +34,22 @@ const Container = (props: Props) => {
 
             }).then(() => {
                 toast('success sending email')
+                setLoading(false)
             })
 
             
         }
         catch (error: any) {
             toast('error sending email')
+            setLoading(false)
         }
         finally {
+            setLoading(false)
             setInputText({
                 full_name: "",
                 subject: "",
                 message: ""
             })
-            
         }
 
     }
@@ -63,7 +66,10 @@ const Container = (props: Props) => {
 
                 </textarea>
 
-                <Button color='#2F58CD' onClick={(e: any) => handleSubmit(e)} name='Send Message'/>
+                <Button loading={loading} color='#2F58CD' onClick={(e: any) => {
+                    handleSubmit(e)
+                    setLoading(true)
+                }} name='Send Message'/>
         
             </section>
             
