@@ -18,6 +18,8 @@ import { useScroll, useSpring, animated } from '@react-spring/web'
 import { useAudio } from 'react-use'
 import Bottom from '@/Layout/Bottom'
 import Hanger from '@/components/Hanger'
+import { web_url } from '@/utils/constants'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -55,10 +57,7 @@ export default function Home() {
   const [showPage, setShowPage] = useState(false);
   const [pageShown, setPageShown] = useState<string | null>('')
   const [playBuzz, setplayBuzz] = useState(false)
-  const [audio, state, controls, ref] = useAudio({
-    src: '/audio/spectre.mp3',
-    autoPlay: playBuzz,
-  });
+
 
   const [mute, setmute] = useState(false)
 
@@ -97,8 +96,10 @@ export default function Home() {
         <title>Coding Pastor</title>
         <meta name="description" content="I am a Professional website Developer with years of experience building websites for businesses and enterprises." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:image" content="/ayo.jpg" />
+        <meta property="og:image" content={web_url} />
+
         <link rel="icon" href="/ayo.jpg" />
+
       </Head>
       <div id="hero" className={`h-screen bg-[#1B2430] flex flex-col items-center justify-center p-4 ${showPage && 'hidden'}`}>
           
@@ -108,12 +109,9 @@ export default function Home() {
         </div>
 
       <main className={`${!showPage && 'hidden'} bg-[#1B2430]`}>
-        {/* {audio}
-        <button onClick={controls.mute}>Mute</button>
-        <button className='p-2 text-white bg-red-100 mt-40 ml-10' onClick={controls.unmute}>UnMute</button> */}
-        {/* <button onClick={handleMute}>Do both</button> */}
+       
         <animated.div className="page" style={pageAnimation}>
-            
+
             <AllComponents />
         </animated.div>
         

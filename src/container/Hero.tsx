@@ -16,7 +16,10 @@ import { DragControls } from 'three-stdlib'
 import { useGeolocation, useScrolling , useBattery, useLocation } from 'react-use';
 import RainbowLineAnimation from '@/components/others/RainbowLineAnimation'
 import BackgroundAnimation from '@/components/others/BackgroundAnimation'
-
+import ScaleLoader from 'react-spinners/ScaleLoader'
+import { useAudio } from 'react-use'
+import { BsPlayCircleFill, BsPause, BsVolumeMute} from 'react-icons/bs'
+import { VscUnmute } from 'react-icons/vsc'
 type Props = {}
 
 const Loader = () => {
@@ -59,7 +62,16 @@ const Hero = (props: Props) => {
             []
         )
         
+    
+    const [audio, state, controls, ref] = useAudio({
+        src: '/audio/spectre.mp3',
+        autoPlay: true,
+        
+    });
 
+
+    const [showControls, setShowControls] = useState(false)
+        
     return (
         <>
         {/* <RainbowLineAnimation /> */}
@@ -70,48 +82,22 @@ const Hero = (props: Props) => {
         
         
             <animated.div id='hero' style={{ background }} className={styles.background} />
+            { audio }
             <main className='bg-[#1B2430] saturate-100 h-screen w-full flex flex-col items-center justify-center'>
-                {/* <section className='absolute z-30 top-[10rem] md:top-[40rem] left-[10px] md:left-[40rem]'>
-                    <Suspense fallback={(<p>Error Loading</p>)}>
-                    <Canvas>
-                        <Hobject img={'github.png'}/>
-                        <OrbitControls />
-                    </Canvas>
-
-                </Suspense>
-                </section> */}
-
-                {/* <section className='absolute right-[10px] top-[45rem] md:top-[40rem]'>
-                    <Suspense fallback={(<p>Error Loading</p>)}>
-                    <Canvas>
-                        <Hobject img={'hashnode.png'}/>
-                        <OrbitControls />
-                    </Canvas>
-
-                </Suspense>
-                </section> */}
-                {/* <section className='absolute z-30 left-10 top-[40rem]'>
-                    <Suspense fallback={(<p>Error Loading</p>)}>
-                    <Canvas>
-                        <Hobject img={'linkedin.png'}/>
-                        <OrbitControls />
-                    </Canvas>
-
-                </Suspense>
-                </section> */}
-
-                {/* <div className='w-1/4 absolute top-[3rem] md:top-[2rem] right-20'>
-                    <Suspense fallback={(<p>Error Loading</p>)}>
-                        <Canvas>
-                            <Moon />
-                            <OrbitControls autoRotate autoRotateSpeed={8} />
-                        </Canvas>
-
-                    </Suspense>
-                </div> */}
-
-                
-                
+                <div className='z-30 absolute right-10 top-20 '>
+                    {
+                        showControls && (
+                            <>
+                                <button onClick={controls.mute} className='p-3 bg-white  z-40'>< BsVolumeMute /></button>
+                                <button onClick={controls.unmute} className='p-3 bg-white  z-40'><VscUnmute /></button>
+                                <button onClick={controls.pause} className='p-3 bg-white  z-40'>< BsPause /></button>
+                                <button onClick={controls.play} className='p-3 bg-white  z-40'><BsPlayCircleFill /></button>
+                            </>
+                        
+                        )
+                    }
+                    <button className='rounded-md bg-black/20 backdrop-blur-md text-white p-3 font-medium' onClick={() => setShowControls((prev) => !prev)}>Show Controls</button>
+                </div>
                 
 
                 <div className='flex flex-row mt-0 md:mt-0 md:flex-col items-start md:items-center w-full'>

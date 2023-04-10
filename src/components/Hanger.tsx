@@ -6,10 +6,10 @@ type Props = {}
 
 const Hanger = (props: Props) => {
     const [open, setOpen] = useState<boolean>(false)
-    const [showNav, setShowNav] = useState<boolean>(false)
 
     const pageAnimation = useSpring({
         transform: open ? 'translateX(0%)' : 'translateX(100%)',
+        
     });
 
 

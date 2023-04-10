@@ -1,0 +1,1 @@
+export const web_url = 'https://www.codingpastor.com/ayo.jpg'
