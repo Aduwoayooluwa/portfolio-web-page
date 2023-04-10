@@ -17,6 +17,7 @@ import Work from '@/container/Work'
 import { useScroll, useSpring, animated } from '@react-spring/web'
 import { useAudio } from 'react-use'
 import Bottom from '@/Layout/Bottom'
+import Hanger from '@/components/Hanger'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,6 +31,7 @@ const AllComponents = () => {
           <Suspense fallback={(<div>Error Bringing Up Page</div>)}>
             <Hero />
           </Suspense>
+          
           
           {/* <animated.div>
             <Projects />

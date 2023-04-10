@@ -139,7 +139,7 @@ const Hero = (props: Props) => {
                         <Suspense fallback={(<div>Loading...</div>)}>
                             <Canvas>
                                 <Chair />
-                                <OrbitControls enableZoom={false}/>
+                                <OrbitControls enablePan={false} enableZoom={false}/>
                             </Canvas>
                             
                         </Suspense>

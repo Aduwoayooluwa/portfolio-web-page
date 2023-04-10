@@ -1,3 +1,4 @@
+import Hanger from '@/components/Hanger'
 import BoxApp from '@/components/threejs/Box'
 import React from 'react'
 import { SiHashnode, SiGithub, SiLinkedin, SiMicrodotblog } from 'react-icons/si'
@@ -6,8 +7,10 @@ type Props = {}
 const Footer = (props: Props) => {
     return (
         <div className='py-10 px-5 text-center w-full text-white bg-slate-900'>
-            <div id="footer" className='w-full my-3'>
+            <div id="footer" className='w-full grid place-items-center my-3'>
             <p className='font-bold text-[1.8rem]'>Ready To Collaborate?<br></br>Get In Touch!</p>
+            
+            <Hanger />
             </div>
         
 
@@ -19,6 +22,7 @@ const Footer = (props: Props) => {
                     <p onClick={() => window.location.replace('https://github/AduwoAyooluwa')} className='flex items-center'><span><SiGithub /></span><a className="ml-3" href=''>Github</a></p>
                     <p onClick={() => window.location.replace('https://linkedin.com/in/aduwo-ayooluwa')} className='flex items-center'><span className='text-blue-500'><SiLinkedin /></span><a className="ml-3" href=''>LinkedIn</a></p>
                     <p onClick={() => window.location.replace('https://codingpastor.dev')} className='flex items-center'><span className='text-yellow-500'><SiMicrodotblog /></span><a className="ml-3" href='https://codingpastor.dev'>My Blog</a></p>
+
                 </div>
 
                 <div className='w-1/2 items-end'>
