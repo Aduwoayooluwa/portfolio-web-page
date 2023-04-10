@@ -1,11 +1,14 @@
 import Button from '@/components/threejs/Spring'
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify';
+import { Dialog, Transition } from '@headlessui/react'
+
 type Props = {}
 
 const Container = (props: Props) => {
     const [loading, setLoading] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
     
     const [inputText, setInputText] = React.useState({
         full_name: "",
@@ -66,11 +69,13 @@ const Container = (props: Props) => {
 
                 </textarea>
 
-                <Button loading={loading} color='#2F58CD' onClick={(e: any) => {
-                    handleSubmit(e)
-                    setLoading(true)
-                }} name='Send Message'/>
-        
+                <a href='mailto:aduwoayooluwa2017@gmail.com' className='bg-blue-600 text-white w-[200px] font-medium rounded-md text-center py-3'>Email</a>
+
+                {/* <Button loading={loading} color='#2F58CD' onClick={(e: any) => {
+                    setIsModalOpen(true)
+                }} name='Send Message'/> */}
+
+
             </section>
             
         </div>
