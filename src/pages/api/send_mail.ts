@@ -18,9 +18,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 
   
-  const { name, email, message, subject } = req.body as FormFields;
+  const { name, message, subject } = req.body as FormFields;
 
-  if ( !name || !email || !message || !subject) {
+  if ( !name || !message || !subject) {
     res.status(401).json({ error: 'Fill in the details' });
   }
   const courier = CourierClient(
