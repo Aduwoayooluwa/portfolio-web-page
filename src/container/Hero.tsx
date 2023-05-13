@@ -102,7 +102,7 @@ const Hero = (props: Props) => {
 
                 <div className='flex flex-row mt-0 md:mt-0 md:flex-col items-start md:items-center w-full'>
                     <p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Today&apos;s date is {currentDate}</p>
-                    { charging && (<p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'>Your phone is Charging Currently</p>)}
+                    { charging && (<p className=' w-full text-xs font-extrabold text-start md:text-right bg-clip-text text-transparent bg-gradient-to-r from-red-300 via-green-400  to-yellow-500 px-10'></p>)}
                 </div>
 
                 <section className='px-0 md:px-4 flex justify-center md:justify-between items-center md:flex-row flex-col mt-14 md:mt-0  text-white z-20 h-fit w-4/5 md:h-[400px]' >
