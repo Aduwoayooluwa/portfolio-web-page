@@ -14,7 +14,7 @@
   
 }
 
-#about p, #work p, #hero p, #footer p {
+#about p, #work p, #hero p, #footer p, .projects li, .projects p {
   background: -webkit-linear-gradient(#eee, #B5D5C5, #babe4d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

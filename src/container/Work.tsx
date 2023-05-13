@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import { BsArrowUpRightCircle } from 'react-icons/bs'
 import { useSprings, animated, config } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
+import { useRouter } from 'next/router'
 
 type Props = {}
 
@@ -74,6 +75,8 @@ const Work = (props: Props) => {
         if (!active) order.current = newOrder
     })
 
+    const router = useRouter()
+
     return (
         <main id='work' className='w-full bg-[#1B2430] saturate-100 h-fit p-3 flex flex-col items-center'>
             
@@ -85,7 +88,7 @@ const Work = (props: Props) => {
                         
 
                         {
-                            projects.map((data, index) => {
+                            projects.slice(0, 6).map((data, index) => {
                                 return(
                                     <div key={index} className='my-3 shadow bg-slate-900 text-slate-300  overflow-hidden p-4'>
                                         <p className='leading-8 font-medium text-xl tracking-wide '>{data.title}</p>
@@ -103,6 +106,9 @@ const Work = (props: Props) => {
                         }
 
                     </div>
+                    <button className="text-white p-2 border text-xs rounded-md shadow" onClick={() => {
+                        router.push("/projects")
+                    }}>View More Projects</button>
                 </section>
             </div>
         </main>

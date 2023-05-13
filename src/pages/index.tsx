@@ -19,16 +19,23 @@ import { useAudio } from 'react-use'
 import Bottom from '@/Layout/Bottom'
 import Hanger from '@/components/Hanger'
 import { web_url } from '@/utils/constants'
-
-
+import { useInView } from 'react-intersection-observer';
 
 const inter = Inter({ subsets: ['latin'] })
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
 const AllComponents = () => {
+  const options = {
+    threshold: 0
+  }
+
+  const { ref, inView, entry } = useInView(options)
+  // console.log('ref', ref)
+  // console.log('inview', inView.valueOf())
+  // console.log('entry', entry?.intersectionRect)
   return (
     <React.Fragment>
-    <main>
+    <main ref={ref}>
         <>
           <Suspense fallback={(<div>Error Bringing Up Page</div>)}>
             <Hero />
@@ -38,7 +45,7 @@ const AllComponents = () => {
           {/* <animated.div>
             <Projects />
           </animated.div> */}
-      
+        
           <Stacks />
           <Work />
           <About />        
@@ -109,7 +116,7 @@ export default function Home() {
         </div>
 
       <main className={`${!showPage && 'hidden'} bg-[#1B2430]`}>
-       
+      
         <animated.div className="page" style={pageAnimation}>
 
             <AllComponents />

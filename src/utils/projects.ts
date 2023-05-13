@@ -8,13 +8,56 @@ export const projects = [
         img: '/projects/car3d.png'
     },
     {
-        title: 'FUTA Grandeza (2020/2021) Web Page',
+        title: 'Foodie',
+        desc: `Food delivery Application with React Native`,
+        stacks: ['React Native', 'Typescript'],
+        code: 'https://github.com/Aduwoayooluwa/foodie-App',
+        demo: '',
+        img: '/projects/car3d.png'
+    },
+    {
+        title: 'User Dashboard',
+        desc: `A Dashboard User interface, that show analytics gotten from an API`,
+        stacks: ['Next.js', 'swr', 'tailwind', 'Typescript'],
+        code: 'https://github.com/Aduwoayooluwa/dashboard-mainstack',
+        demo: 'https://aduwo-ayooluwa-dashboard-mainstack.vercel.app/',
+        img: '/projects/car3d.png'
+    },
+    {
+        title: 'BlinkCollab',
+        desc: `A Disposable Group Chat Application. Useful for short term teams and meetings`,
+        stacks: ['Next.js', 'three.js', 'tailwind', 'Typescript', 'Zustand', 'Firebase'],
+        code: 'https://github.com/Aduwoayooluwa/3d-car-react',
+        demo: '',
+        img: '/projects/car3d.png'
+    },
+    {
+        title: 'Kwizza',
+        desc: `An audio and text based quiz creation and rendering application`,
+        stacks: ['Next.js', 'three.js', 'tailwind', 'Typescript', 'Supabase'],
+        code: 'https://github.com/Aduwoayooluwa/3d-car-react',
+        demo: '',
+        img: '/projects/car3d.png'
+    },
+    
+    {
+            title: 'Writer-plate',
+            desc: `An article drafter for writers to write and draft out their thoughts`,
+            stacks: ['Astro.build', 'tailwind', 'Typescript', 'React'],
+            code: 'https://github.com/Aduwoayooluwa/writers-plate',
+            demo: '',
+            img: '/projects/car3d.png'
+    },
+
+    {
+        title: 'Web3 Connect',
         desc: `This is a Simple Web Page that was built for the 2021 set for Federal University of Technology, Akure Students.`,
-        stacks: ['React.js', 'Typescript', 'Tailwind'],
-        code: '',
-        demo: 'https://grandeza.com.ng',
+        stacks: ['Solidity', 'Typescript', 'Node.js', 'Web3.js'],
+        code: 'https://github.com/Aduwoayooluwa/web3-connect',
+        demo: '',
         img: '/projects/grandeza.png'
     },
+
     {
         title: 'Linkedin Local Akure Web Page',
         desc: `A Simple web page that was built for the Linkedin Local Akure Event. `,

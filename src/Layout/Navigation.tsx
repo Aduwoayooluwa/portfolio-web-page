@@ -57,7 +57,7 @@ const Navigation = (props: Props) => {
                     {
                         navItems.map((item, index) => {
                             return (
-                                <li className='list-none font-semibold' key={index}>{item.name}</li>
+                                <li className='list-none font-medium' key={index}>{item.name}</li>
                             
                             )
                         })
