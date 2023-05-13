@@ -36,7 +36,7 @@ export const projects = [
         desc: `An audio and text based quiz creation and rendering application`,
         stacks: ['Next.js', 'three.js', 'tailwind', 'Typescript', 'Supabase'],
         code: 'https://github.com/Aduwoayooluwa/3d-car-react',
-        demo: '',
+        demo: 'kwizza.vercel.app',
         img: '/projects/car3d.png'
     },
     

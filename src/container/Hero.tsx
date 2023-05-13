@@ -82,7 +82,7 @@ const Hero = (props: Props) => {
         
         
             <animated.div id='hero' style={{ background }} className={styles.background} />
-            { audio }
+            {/* { audio } */}
             <main className='bg-[#1B2430] saturate-100 h-screen w-full flex flex-col items-center justify-center'>
                 <div className='z-30 absolute right-10 top-20 '>
                     {
