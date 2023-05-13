@@ -3,25 +3,32 @@ import { Rotate as Hamburger } from 'hamburger-react'
 import { ScrollContext } from '@/context/ScrollContext'
 import { useScroll, useSpring, animated } from '@react-spring/web'
 import { SiHashnode, SiGithub, SiLinkedin, SiMicrodotblog } from 'react-icons/si'
+import Link from 'next/link'
 
 type Props = {}
 
 const navItems = [
     {
         name: 'Home',
+        link: '/'
         
     },
     {
-        name: 'Projects'
+        name: 'Projects',
+        link: '#work'
     },
     {
-        name: 'About'
+        name: 'About',
+        link: '#about'
     },
     {
-        name: 'Contact'
+        name: 'Contact',
+        link: '#contact'
+
     },
     {
-        name: 'Experience'
+        name: 'Experience',
+        link: '/experience'
     }
 ]
 
@@ -45,7 +52,7 @@ const Navigation = (props: Props) => {
                 {
                     navItems.map((item, index) => {
                         return (
-                            <li className='list-none font-semibold' key={index}>{item.name}</li>
+                            <li className='list-none cursor-pointer font-semibold' key={index}><Link href={item.link}>{item.name}</Link></li>
                         )
                     })
                 }
@@ -57,7 +64,7 @@ const Navigation = (props: Props) => {
                     {
                         navItems.map((item, index) => {
                             return (
-                                <li className='list-none font-medium' key={index}>{item.name}</li>
+                                <li className='list-none cursor-pointer font-medium' key={index}>{item.name}</li>
                             
                             )
                         })

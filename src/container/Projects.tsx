@@ -19,7 +19,7 @@ type Props = {}
 const Projects = (props: Props) => {
 
     return (
-            <main  className='h-fit md:h-screen py-10 px-5 bg-[#0E8388] w-full'>
+            <main id="projects"  className='h-fit md:h-screen py-10 px-5 bg-[#0E8388] w-full'>
                     <div className='hidden h-full md:flex'>
     <Swiper
                             // install Swiper modules

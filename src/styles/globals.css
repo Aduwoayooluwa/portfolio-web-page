@@ -15,9 +15,23 @@
 }
 
 #about p, #work p, #hero p, #footer p, .projects li, .projects p {
-  background: -webkit-linear-gradient(#eee, #B5D5C5, #babe4d);
+  background: linear-gradient(300deg,#eeeeee,#b5d5c5,#babe4d);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+-webkit-text-fill-color: transparent;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
