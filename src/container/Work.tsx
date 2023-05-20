@@ -5,6 +5,7 @@ import { BsArrowUpRightCircle } from 'react-icons/bs'
 import { useSprings, animated, config } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
 import { useRouter } from 'next/router'
+import { dragDiv, dragEnter } from './helper'
 
 type Props = {}
 
@@ -76,6 +77,8 @@ const Work = (props: Props) => {
     })
 
     const router = useRouter()
+    const dragRef = useRef()
+    const dragOverItem = useRef()
 
     return (
         <main id='work' className='w-full bg-[#1B2430] saturate-100 h-fit p-3 flex flex-col items-center'>
@@ -90,7 +93,8 @@ const Work = (props: Props) => {
                         {
                             projects.slice(0, 6).map((data, index) => {
                                 return(
-                                    <div key={index} className='my-3 shadow bg-slate-900 text-slate-300  overflow-hidden p-4'>
+                                    <div draggable key={index}
+                                    className='my-3 shadow bg-slate-900 text-slate-300  overflow-hidden p-4'>
                                         <p className='leading-8 font-medium text-xl tracking-wide '>{data.title}</p>
                                         <small className=''>{data.desc}</small>
 
