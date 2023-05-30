@@ -2,7 +2,7 @@ import { projects } from '@/utils/projects'
 import Image from 'next/image'
 import React, { useRef } from 'react'
 import { BsArrowUpRightCircle } from 'react-icons/bs'
-import { useSprings, animated, config } from '@react-spring/web'
+import { useSprings, animated, config, useInView, useTransition } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
 import { useRouter } from 'next/router'
 
@@ -66,19 +66,43 @@ const fn =
 
 const Work = (props: Props) => {
     const order = useRef(experience.map((_: any, index: any) => index)) // Store indicies as a local ref, this represents the item order
-    const [springs, api] = useSprings(experience.length, fn(order.current)) // Create springs, each corresponds to an item, controlling its transform, scale, etc.
-    const bind = useDrag(({ args: [originalIndex], active, movement: [, y] }) => {
-        const curIndex = order.current.indexOf(originalIndex)
-        const curRow = (Math.round((curIndex * 100 + y) / 100), 0, experience.length - 1)
-        const newOrder: any = (order.current, curIndex, curRow)
-        api.start(fn(newOrder, active, originalIndex, curIndex, y)) // Feed springs new style data, they'll animate the view without causing a single render
-        if (!active) order.current = newOrder
-    })
+    //const [springs, api] = useSprings(experience.length, fn(order.current)) // Create springs, each corresponds to an item, controlling its transform, scale, etc.
+    //const bind = useDrag(({ args: [originalIndex], active, movement: [, y] }) => {
+    //     const curIndex = order.current.indexOf(originalIndex)
+    //     const curRow = (Math.round((curIndex * 100 + y) / 100), 0, experience.length - 1)
+    //     const newOrder: any = (order.current, curIndex, curRow)
+    //     api.start(fn(newOrder, active, originalIndex, curIndex, y)) // Feed springs new style data, they'll animate the view without causing a single render
+    //     if (!active) order.current = newOrder
+    // })
+
+    // // transition 
+    // const [transition, api] = useTransition(experience, {
+    //     from: { opacity: 0 },
+    //     enter: { opacity: 1 },
+    //     leave: { opacity: 1 },
+    // })
 
     const router = useRouter()
 
+    const [ref, springs] = useInView<any>(
+        () => ({
+            from: {
+                opacity: 0,
+                y: 20,
+            },
+            to: {
+                opacity: 0.2,
+                y: 0,
+            },
+            }),
+            {
+            rootMargin: '-40% 0%',
+            }
+        )
+        
+
     return (
-        <main id='work' className='w-full bg-[#1B2430] saturate-100 h-fit p-3 flex flex-col items-center'>
+        <main ref={ref} style={springs} id='work' className='w-full bg-[#1B2430] saturate-100 h-fit p-3 flex flex-col items-center'>
             
             <div className='w-4/5 z-10'>
                 <p className='font-bold text-xl md:text-2xl text-center  text-slate-300 py-4'>Work Experiences</p>

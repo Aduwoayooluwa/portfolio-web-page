@@ -1,5 +1,13 @@
 export const projects = [
     {
+        title: 'Cakes And Psteries Store',
+        desc: `A fully functional cakes and pasteries restaurant website, add to cart, and purchase food.`,
+        stacks: ['Next.js', 'three.js', 'Chakra UI', 'Typescript', 'gsap', 'react-spring'],
+        code: 'https://github.com/Aduwoayooluwa/cake-n-pastries/',
+        demo: 'https://cake-n-pastries.vercel.app/',
+        img: '/projects/car3d.png'
+    },
+    {
         title: '3d Moving Vehicle',
         desc: `A 3d Moving Car using React and Three.js`,
         stacks: ['Next.js', 'three.js', 'tailwind', 'Typescript'],
@@ -8,19 +16,19 @@ export const projects = [
         img: '/projects/car3d.png'
     },
     {
-        title: 'Foodie',
-        desc: `Food delivery Application with React Native`,
-        stacks: ['React Native', 'Typescript'],
-        code: 'https://github.com/Aduwoayooluwa/foodie-App',
-        demo: '',
-        img: '/projects/car3d.png'
-    },
-    {
         title: 'User Dashboard',
         desc: `A Dashboard User interface, that show analytics gotten from an API`,
         stacks: ['Next.js', 'swr', 'tailwind', 'Typescript'],
         code: 'https://github.com/Aduwoayooluwa/dashboard-mainstack',
         demo: 'https://aduwo-ayooluwa-dashboard-mainstack.vercel.app/',
+        img: '/projects/car3d.png'
+    },
+    {
+        title: 'Foodie',
+        desc: `Food delivery Application with React Native`,
+        stacks: ['React Native', 'Typescript'],
+        code: 'https://github.com/Aduwoayooluwa/foodie-App',
+        demo: '',
         img: '/projects/car3d.png'
     },
     {

@@ -5,9 +5,7 @@ import Image from 'next/image'
 import { Inter, Dancing_Script } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Hero from '@/container/Hero'
-import Projects from '@/container/Projects'
 import Stacks from '@/container/Stacks'
-import ScrollContainer from '@/components/others/ScrollContainer'
 import About from '@/container/About'
 import Footer from '@/Layout/Footer'
 import Test from '@/container/Test'
@@ -15,27 +13,15 @@ import Container from '@/container/Container'
 import React, { Suspense, UIEvent, useEffect, useState } from 'react'
 import Work from '@/container/Work'
 import { useScroll, useSpring, animated } from '@react-spring/web'
-import { useAudio } from 'react-use'
-import Bottom from '@/Layout/Bottom'
-import Hanger from '@/components/Hanger'
 import { web_url } from '@/utils/constants'
-import { useInView } from 'react-intersection-observer';
 
 const inter = Inter({ subsets: ['latin'] })
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
 const AllComponents = () => {
-  const options = {
-    threshold: 0
-  }
-
-  const { ref, inView, entry } = useInView(options)
-  // console.log('ref', ref)
-  // console.log('inview', inView.valueOf())
-  // console.log('entry', entry?.intersectionRect)
   return (
     <React.Fragment>
-    <main ref={ref}>
+    <main>
         <>
           <Suspense fallback={(<div>Error Bringing Up Page</div>)}>
             <Hero />
@@ -65,18 +51,6 @@ export default function Home() {
   const [pageShown, setPageShown] = useState<string | null>('')
   const [playBuzz, setplayBuzz] = useState(false)
 
-
-  const [mute, setmute] = useState(false)
-
-  // const handleMute = () => {
-  //   setmute((prev: boolean) => !prev)
-  //   if (mute) {
-  //     return controls.mute
-  //   }
-  //   else {
-  //     return controls.unmute
-  //   }
-  // }
   useEffect(() => {
     setPageShown(sessionStorage.getItem('showPage'))
 
