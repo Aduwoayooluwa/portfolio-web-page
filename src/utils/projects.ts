@@ -1,6 +1,6 @@
 export const projects = [
     {
-        title: 'Cakes And Psteries Store',
+        title: 'Cakes And Pasteries Store',
         desc: `A fully functional cakes and pasteries restaurant website, add to cart, and purchase food.`,
         stacks: ['Next.js', 'three.js', 'Chakra UI', 'Typescript', 'gsap', 'react-spring'],
         code: 'https://github.com/Aduwoayooluwa/cake-n-pastries/',
