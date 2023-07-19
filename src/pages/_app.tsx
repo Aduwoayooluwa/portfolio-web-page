@@ -1,6 +1,7 @@
 import Navigation from '@/Layout/Navigation'
 import ScrollProvider from '@/context/ScrollContext'
 import '@/styles/globals.css'
+import { TheFont } from '@/utils/font'
 import type { AppProps } from 'next/app'
 import { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,12 +14,12 @@ export default function App({ Component, pageProps }: AppProps) {
     setPageShown(sessionStorage.getItem('showPage'))
   }, [])
   return <ScrollProvider>
-    <>
+    <main className={TheFont.className}>
       <Navigation />
 
       <Component {...pageProps} />
       <ToastContainer />
-    </>
-    
+    </main>
+
   </ScrollProvider>
 }
