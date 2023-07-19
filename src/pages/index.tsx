@@ -21,27 +21,27 @@ const dancingScript = Dancing_Script({ subsets: ['latin'] });
 const AllComponents = () => {
   return (
     <React.Fragment>
-    <main>
+      <main className="bg_texture">
         <>
           <Suspense fallback={(<div>Error Bringing Up Page</div>)}>
             <Hero />
           </Suspense>
-          
-          
+
+
           {/* <animated.div>
             <Projects />
           </animated.div> */}
-        
+
           <Stacks />
           <Work />
-          <About />        
-        <Container />
-      </>
-    </main>
-    <footer>
-    <Footer />
-  </footer>
-  </React.Fragment>
+          <About />
+          <Container />
+        </>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </React.Fragment>
   )
 }
 
@@ -57,7 +57,7 @@ export default function Home() {
     if (pageShown === 'true') {
       setShowPage(true)
     }
-  },[pageShown])
+  }, [pageShown])
 
 
   const pageAnimation = useSpring({
@@ -66,11 +66,11 @@ export default function Home() {
   });
 
   const handleClick = () => {
-      setShowPage(true)
-      sessionStorage.setItem('showPage', 'true')
-      setplayBuzz(true)
-    };
-  
+    setShowPage(true)
+    sessionStorage.setItem('showPage', 'true')
+    setplayBuzz(true)
+  };
+
   return (
     <>
       <Head>
@@ -83,21 +83,21 @@ export default function Home() {
 
       </Head>
       <div id="hero" className={`h-screen bg-[#1B2430] flex flex-col items-center justify-center p-4 ${showPage && 'hidden'}`}>
-          
-          <p id="intro_p" className={`text-[3rem] ${dancingScript.className} text-center font-extrabold`}>Coding Pastor Welcomes you</p>
-          <button className={`bg-green-700 text-white font-semibold p-4 mt-20`} onClick={handleClick}>Hello world</button>
-          
-        </div>
+
+        <p id="intro_p" className={`text-[3rem] ${dancingScript.className} text-center font-extrabold`}>Coding Pastor Welcomes you</p>
+        <button className={`bg-green-700 text-white font-semibold p-4 mt-20`} onClick={handleClick}>Hello world</button>
+
+      </div>
 
       <main className={`${!showPage && 'hidden'} bg-[#1B2430]`}>
-      
+
         <animated.div className="page" style={pageAnimation}>
 
-            <AllComponents />
+          <AllComponents />
         </animated.div>
-        
+
       </main>
-      
+
     </>
   )
 }

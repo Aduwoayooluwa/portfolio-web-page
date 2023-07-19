@@ -9,7 +9,7 @@ type Props = {}
 const Container = (props: Props) => {
     const [loading, setLoading] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    
+
     const [inputText, setInputText] = React.useState({
         full_name: "",
         subject: "",
@@ -17,9 +17,9 @@ const Container = (props: Props) => {
     })
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target 
+        const { name, value } = e.target
 
-        setInputText({...inputText, [name]: value })
+        setInputText({ ...inputText, [name]: value })
     }
 
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -40,7 +40,7 @@ const Container = (props: Props) => {
                 setLoading(false)
             })
 
-            
+
         }
         catch (error: any) {
             toast('error sending email')
@@ -56,20 +56,23 @@ const Container = (props: Props) => {
         }
 
     }
-    return (
-        <div id='footer' className='h-fit py-5 w-full grid place-items-center bg-[#1B2430] saturate-100'>
-            
-            <section className='z-20 grid place-items-center py-10 px-5  h-fit bg-slate-900 w-full md:w-2/3'>
-            <p className='text-white font-semibold text-2xl'>Contact Me</p>
-                <input required={true} onChange={handleInputChange} name='full_name' value={inputText.full_name} type='text' placeholder='Enter your name' className='md:w-3/5 w-full border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3  border-slate-700 rounded-md'/>
 
-                <input required onChange={handleInputChange} name='subject' value={inputText.subject} type='text' placeholder='Enter Subject' className='w-full md:w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3 border-slate-700 rounded-md'/>
-            
+
+    return (
+        <div id='footer' className='h-fit z-40 py-5 w-full grid place-items-center saturate-100'>
+
+            <section className='z-20 grid place-items-center py-10 px-5  h-fit bg-slate-900 w-full md:w-2/3'>
+                <p className='text-white font-semibold text-2xl'>Contact Me</p>
+                <input required={true} onChange={handleInputChange} name='full_name' value={inputText.full_name} type='text' placeholder='Enter your name' className='md:w-3/5 w-full border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3  border-slate-700 rounded-md' />
+
+                <input required onChange={handleInputChange} name='subject' value={inputText.subject} type='text' placeholder='Enter Subject' className='w-full md:w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3 border-slate-700 rounded-md' />
+
                 <textarea required onChange={handleInputChange} name='message' value={inputText.message} className='w-full md:w-3/5 border p-3 bg-white outline-none focus:border-purple-600 py-3 my-3 h-[300px]  border-slate-700 rounded-md'>
 
                 </textarea>
 
-                <a href='mailto:aduwoayooluwa2017@gmail.com' className='bg-blue-600 text-white w-[200px] font-medium rounded-md text-center py-3'>Email</a>
+                <button></button>
+                <a href='mailto:aduwoayooluwa2017@gmail.com' className='bg-blue-600 -z-40 text-white w-[200px] font-medium rounded-md text-center py-3'>Email</a>
 
                 {/* <Button loading={loading} color='#2F58CD' onClick={(e: any) => {
                     setIsModalOpen(true)
@@ -77,7 +80,7 @@ const Container = (props: Props) => {
 
 
             </section>
-            
+
         </div>
     )
 }

@@ -10,34 +10,50 @@
 
 * {
   font-family: 'Ubuntu', sans-serif;
-  
-  
+
+
+
 }
 
-#about p, #work p, #hero p, #footer p, .projects li, .projects p {
-  background: linear-gradient(300deg,#eeeeee,#b5d5c5,#babe4d);
+#about p,
+#work p,
+#hero p,
+#footer p,
+.projects li,
+.projects p {
+  background: linear-gradient(300deg, #eeeeee, #b5d5c5, #babe4d);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
   -webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  z-index: 100;
 }
 
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
+.bg_texture {
+  background-image: url("/portfolio.png");
+  height: 100%;
+}
+
 /* Hide scrollbar for IE, Edge and Firefox */
 #project-scroll {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 #intro_p {
@@ -48,15 +64,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .svg-container {
   width: 80%;
   height: 80%;
   margin: auto;
+  z-index: 100;
 }
 
 .svg {
   width: 100%;
   height: 100%;
+  z-index: 100;
 }
